@@ -16,7 +16,7 @@
 > system will be designed to be intentionally simplified to be accessible to any user and developer to
 > understand comprehensively no matter their education.
 >
-![Template Logo](FERENGI-logos.jpeg)
+![Template Logo](./img/FERENGI-logos.jpeg)
 
 
 
