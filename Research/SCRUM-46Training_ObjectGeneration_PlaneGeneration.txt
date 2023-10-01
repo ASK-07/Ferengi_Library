@@ -1,0 +1,27 @@
+1. Title or name of research/training: 
+
+Training in object generation and plane generation
+
+  2. Why you are doing it.
+
+Personally, I have very little experience beyond computation elements of code. I would like to allot some time to learn about implementations of windows, planes, and objects, so that I can not only implement, but design. 
+
+  3. What you expect to learn/do.   Be specific by identifying what code/modules will be affected by the research/training.
+
+I expect to be able to draw shapes beyond just a circle. This will influence the object generation classes and how they are tied to user input via keyboard or button. This will also influence the limitations the user will face when trying to gather or represent data. 
+
+   4. What do you expect to do with it, including any code you expect to write.  Be specific.  For example, "Writing the UI" is not sufficient.   "Writing the Login class" is.
+
+I expect to be able to draw objects of a specific, size, color, shape. This object and its traits will eventually interact with the other features of this program, such as collision detection, trajectory, and gravity. Due to this, some of this time included discussion with Jaime about his intent this sprint, due to the proximity of our tasks. 
+
+   5. What task(s) in Jira represent the work you will do that was/is dependent on the research/training:
+
+**Object drawing/ generation SCRUM 26
+
+Collaborative tasks that this will influence:
+
+Object Interaction implementation
+
+  Relevant links visited in research:
+
+https://www.sfml-dev.org/tutorials/2.6/
