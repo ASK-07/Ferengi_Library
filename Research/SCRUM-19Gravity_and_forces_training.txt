@@ -1,0 +1,41 @@
+1. Title or name of research/training: 
+
+How to have gravity and other forces act on an object in a program. 
+
+2. Why are you doing it?
+
+I have never been tasked with having an object actually react to any forces at all. This is a completely new area for me personally. The closest that I have to any experience in this field is creating a game that allowed the user to move the playable character, however this did not include any actual physics or gravity, just a set speed. 
+
+3. What you expect to learn/do. Be specific by identifying what code/modules will be affected by the research/training.
+
+With this training I expect to understand how the �force_generator� and �gravity_generator� work together to give an object the properties of being affected by gravity and any force that may happen upon the object. Also, I would like to understand how the dynamics come into play such as �rigidbody� dynamics that control and alter the forces of an object like friction, gravity, velocity, mass, and any other forces that may act on the object. 
+
+4. What do you expect to do with it, including any code you expect to write. Be specific. For example, �Writing the UI� is not sufficient. �Writing the login class� is.
+
+Using these function I expect to be able to write both the force_generator and the gravity_generator. This training will also help with the other dynamics and forces used throughout the entire project like the rigidbody dynamics, collision, and also the properties of the plane that we will be creating for the object to live in. 
+
+This is an example of a gravity_generator function. This function defines what gravity acts upon the object by defining it as a virtual object which allows for the function to be derived. This makes the math to make the object move possible. (.txt removed the screenshots, they are uploaded and labeled)
+
+This is an example of a force_generator function. This function works similarly to the gravity_generator function above, the main difference being that this function calculates the other forces that act on the object besides gravity. (.txt removed the screenshots, they are uploaded and labeled) 
+
+
+
+This is an example of the rigid_body fuction. This function actually applies the calculated physics and forces above onto the object and actually alter where the object is and so on according to how the forces would make the object move. Without this function, the object wouldn�t be influenced by the calculated physics and forces. (.txt removed the screenshots, they are uploaded and labeled)
+
+
+
+This is an example of a rigid_body_system function. This is really what glues everything above together. The rigid_body_system takes in all the math and tells the other generators the numbers they need in order to actually make the object behave correctly. This method almost acts like a list of setters and getters for each of the other generators and combines all that data to make the forces display correctly. (.txt removed the screenshots, they are uploaded and labeled)
+
+
+
+With these four main ideas, I will be able to make the object behave correctly when forces and gravity act on it. These methods are the main backbone of the project itself. 
+
+5. What task(s) in Jira represent the work you will do that was/is dependent on the research/training: 
+Implement gravity generator method
+Implement force generator method
+Designing rigid body method
+
+Code from : https://github.com/ange-yaghi/simple-2d-constraint-solver
+Video over code : https://www.youtube.com/watch?v=TtgS-b191V0
+
+
