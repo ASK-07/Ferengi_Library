@@ -1,0 +1,62 @@
+1. Title or name of research/training: 
+
+	State Management
+	
+	
+
+2. Why are you doing it?
+
+	I am researching state management in order to better understand what is necessary for a user to be able to navigate our software in real time.
+	
+	
+
+3. What you expect to learn/do. Be specific by identifying what code/modules will be affected by the research/training.
+
+	Specifically, I would like to design and implement a pause/resume feature to 'freeze' the 2D-Engine in order to observe individual frames and
+	
+	their existing entities in greater detail.
+	
+	To achieve this goal I aim to use a conventional game development *State Pattern, which is an OOP framework consisting of a manager parent class
+	
+	and its (state type) children.
+	
+	
+
+4. What do you expect to do with it, including any code you expect to write.
+
+	The classes I would like to create following the framework described would look something similar to the following:
+	
+		Parent: EngineState
+			
+			Methods: update(), draw()
+			
+			Children(Abstraction/Inheritence): RunningState, StoppedState
+				
+				Methods: update(), draw(), etc.
+
+	*A simple, yet more detailed example shown as a UML Diagram can be found in the blog linked at the bottom of this document.
+	
+	**A short video visualizing something similar to the intended result is included at the bottom of this document.
+	
+	
+5. What task(s) in Jira represent the work you will do that was/is dependent on the research/training: 
+
+	Design/Implement StateManager class
+	Design/Implement RunningState and StoppedState classes 
+
+
+*State Pattern/State Management blog: http://blog.nuclex-games.com/tutorials/cxx/game-state-management/
+
+**Visualization of change of state: https://www.youtube.com/watch?v=QhIqhen6cmw
+
+Additional references:
+
+	I. https://stackoverflow.com/questions/63469861/using-the-state-pattern-in-games
+	
+	II. https://www.youtube.com/playlist?list=PLRtjMdoYXLf4L0UVTggZdTV55baO6x6CO
+	
+	III. https://www.codeproject.com/Articles/1374/State-Pattern-in-C-Applications?msg=1450830#xx1450830xx
+	
+	IV. https://www.youtube.com/watch?v=Faa1krOYuYA
+	
+	V. https://levelup.gitconnected.com/implementing-the-state-pattern-part-6-7631a532c0ea
