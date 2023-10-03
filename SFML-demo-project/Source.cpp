@@ -2,16 +2,21 @@
 #include <string>
 #include <iostream>
 
+
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 800), "Demo Window");
-	const int MAX_SHAPES = 50;
-	int number_of_shapes = 0;
-	sf::Shape *shapes[MAX_SHAPES];
-	sf::CircleShape shape1(100.f);
-	sf::RectangleShape shape2(sf::Vector2f(50.f, 50.f));
-	shape1.setFillColor(sf::Color::Cyan);
-	shape2.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "Demo Window");
+	window.setFramerateLimit(60);
+
+	sf::RectangleShape rect;
+	sf::Vector2f rectanglePosition(600, 350);
+
+	rect.setPosition(rectanglePosition);
+	rect.setSize(sf::Vector2f(100, 100));
+
+
+	float xVelocity = 0;
+	float yVelocity = 0;
 
 	while (window.isOpen())
 	{
@@ -19,55 +24,64 @@ int main()
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-			{
 				window.close();
-			}
-			if (event.type == sf::Event::KeyPressed)
-			{
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
-				{
-					sf::CircleShape *shape1= new sf::CircleShape(100.f);
-					shape1->setPosition(275, 275);
-					shape1->setFillColor(sf::Color::Cyan);
-					shapes[number_of_shapes] = shape1;
-					number_of_shapes++;
 
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2))
-				{
-					sf::RectangleShape* shape2 = new sf::RectangleShape(sf::Vector2f(100.f, 50.f));
-					shape2->setPosition(650, 650);
-					shape2->setFillColor(sf::Color::Red);
-					shapes[number_of_shapes] = shape2;
-					number_of_shapes++;
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+				window.close();
 
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-				{
-					shapes[number_of_shapes-1]->move(0.f, 1.f);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-				{
-					shapes[number_of_shapes-1]->move(0.f, -1.f);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				{
-					shapes[number_of_shapes-1]->move(-1.f, 0.f);
-				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				{
-					shapes[number_of_shapes-1]->move(1.f, 0.f);
-				}
-				
+			xVelocity = 0;
+			yVelocity = 0;
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
+				if (yVelocity <= 0)
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+						yVelocity = 1;
+				else
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+						yVelocity = 0;
 			}
+
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+				if (yVelocity >= 0)
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+						yVelocity = -1;
+					else
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+							yVelocity = 0;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+				if (xVelocity >= 0)
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+						xVelocity = -1;
+					else
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+							xVelocity = 0;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+				if (xVelocity <= 0)
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+						xVelocity = 1;
+					else
+						if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+							xVelocity = 0;
+			}
+
 		}
+
+		if (rectanglePosition.x < 0 || rectanglePosition.x > 1280 - 100)
+			xVelocity *= -1;
+
+		if (rectanglePosition.y < 0 || rectanglePosition.y > 720 - 100)
+			yVelocity *= -1;
+
+		rectanglePosition.x += xVelocity;
+		rectanglePosition.y += yVelocity;
+		rect.setPosition(rectanglePosition);
+
 		window.clear();
-		for (int i = 0; i < number_of_shapes; i++)
-		{
-			window.draw(*shapes[i]);
-		}
+		window.draw(rect);
 		window.display();
-
 	}
-	return 0;
+
+
 }
