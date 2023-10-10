@@ -60,3 +60,5 @@ Additional references:
 	IV. https://www.youtube.com/watch?v=Faa1krOYuYA
 	
 	V. https://levelup.gitconnected.com/implementing-the-state-pattern-part-6-7631a532c0ea
+
+	VI. https://www.binpress.com/creating-city-building-game-with-sfml/
