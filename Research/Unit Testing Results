@@ -1,0 +1,23 @@
+Using code from object interaction implementation, I am looking to create different shapes
+and using a data structure apply different forces on specific objects. 
+
+Results:
+	1. Created a working *pointer* function to "arbitrarily" create different shapes.
+	   ~function works as intended.
+	   ~Users can pick either circle or rectangle, might include other shapes offered by SFML,
+	    might be able to create our own shapes using the framework.
+	   ~Could implement a button system which can use the same function as current controls 
+	    (num1 = circle; num2 = rectangle)
+
+	2. Created a working array which takes in created shapes in order to apply different forces.
+	   ~function works as intended
+	   
+	   Issues: 
+			Gravity seems to be overpowering external forces, fix might include rewriting gravity 
+			function.
+			Possibly issues within the data structure itself, having difficulties displaying 
+			anything on the console.
+
+		
+
+	  
