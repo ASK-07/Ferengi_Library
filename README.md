@@ -50,3 +50,12 @@ List of ready features here:
     >As a user, I would like the ability to pause/resume the state of the engine to observe individual frames that are displayed.
 
 ## Contributions
+- **Jake**: "Designed and partially implemented classes following a state pattern design approach, implemented logic for rendering a state's frame"
+	- `Jira Task (SCRUM-30): Design the interface files outlined by the class diagram`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&issueParent=10007&selectedIssue=SCRUM-30
+		- reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/commits/3d2ccb249cee0a98d8387adb147ce94ee524b893
+	- `Jira Task (SCRUM-32): Implement classes and demonstrate state transition`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&issueParent=10007&selectedIssue=SCRUM-32
+		- reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/commits/95e857a6447b842b3cf6b281417deb2812f0706f
+        
+        
