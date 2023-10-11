@@ -49,3 +49,4 @@ List of ready features here:
     >relevant user story(s): 
     >As a user, I would like the ability to pause/resume the state of the engine to observe individual frames that are displayed.
 
+## Contributions
