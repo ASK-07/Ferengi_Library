@@ -1,0 +1,16 @@
+
+Deployment of SFML onto a flask app
+
+1. Why you are doing it?
+	I am doing this training in order to be able to take an SFML app and deploy it onto a flask app so that anyone with the link to the 	website can interact with the app
+
+2. What you expect to learn/do. Be specific by identifying what code/modules will be affected by the research/training
+	From doing this I expect to be able to take any SFML app and add it to an already existing flask app, allowing the user to interact 	with the app. The app should be able to have full functionality and should not have less features than it would have normally, but 	should be able to have more capabilities than before. For instance once deployed the app might be able to have a scoreboard or 	online capabilities. 
+
+3. What do you expect to do with it, including any code you expect to write. Be specific. For example, “Writing the UI” is not sufficient. 	“Writing the Login class” is. 
+	With this training I want to be able to add features to the SFML app like a scoreboard, online capabilities, a restart button, and 	many other features so that I can take a barebones SFML app and flush it out by adding new features. 
+
+4. What task(s) in Jira represent the work you will do that was/is dependent on the research/training. 
+	Deploy the pinball game into flask
+	Add a feature to restart the game
+	Implement backend score keeping
