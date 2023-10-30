@@ -1,14 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #2E382E;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444;
 }
 
-/* Create dark grey header with a white logo */
 
 header {
-  background-color: #2B2B2B;
+  background-color: #404140fe;
   height: 35px;
   width: 100%;
   opacity: .9;
@@ -16,28 +16,26 @@ header {
 }
 
 header h1.logo {
-  margin: 0;
-  font-size: 1.7em;
-  color: #fff;
+  margin: 5px;
+  font-size: 1.5em;
+  color: #846267;
   text-transform: uppercase;
   float: left;
 }
 
 header h1.logo:hover {
-  color: #fff;
+  color: #846267;
   text-decoration: none;
 }
 
-/* Center the body content */
-
 .container {
-  width: 940px;
+  width: 1000px;
   margin: 0 auto;
 }
-
-div.jumbo {
-  padding: 10px 0 30px 0;
-  background-color: #eeeeee;
+/*title div class*/
+div.title {
+  padding: 0px 0 0px 0;
+  background-color: #404140fe;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
@@ -45,7 +43,8 @@ div.jumbo {
 
 h2 {
   font-size: 3em;
-  margin-top: 40px;
+  color: #846267;
+  margin-top: 0px;
   text-align: center;
   letter-spacing: -2px;
 }
@@ -57,4 +56,23 @@ h3 {
   text-align: center;
   letter-spacing: -1px;
   color: #999;
+}
+
+/*menu bar formatting*/
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #846267;
+  text-decoration: none;
 }
