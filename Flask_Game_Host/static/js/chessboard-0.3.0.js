@@ -310,7 +310,7 @@ function error(code, msg, obj) {
     }
     return;
   }
-
+  
   // alert errors
   if (cfg.showErrors === 'alert') {
     if (obj) {
@@ -441,7 +441,7 @@ function expandConfig() {
   if (cfg.hasOwnProperty('pieceTheme') !== true ||
       (typeof cfg.pieceTheme !== 'string' &&
        typeof cfg.pieceTheme !== 'function')) {
-    cfg.pieceTheme = 'static/img/chesspieces/wikipedia/{piece}.png';
+    cfg.pieceTheme = 'img/{piece}.png';
   }
 
   // animation speeds
