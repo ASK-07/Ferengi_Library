@@ -41,6 +41,16 @@ div.title {
           border-radius: 6px;
 }
 
+table.leaderboard {
+  width: 100px;
+  color: #846267;
+  float: right;
+  border: 1px solid #404140fe;
+}
+th, td {
+  border: 1px solid #404140fe;
+  border-collapse: collapse;
+}
 h2 {
   font-size: 3em;
   color: #846267;
@@ -56,6 +66,14 @@ h3 {
   text-align: center;
   letter-spacing: -1px;
   color: #999;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-right: 19px;
+  text-align: right;
+  color: #846267;
 }
 
 /*menu bar formatting*/
