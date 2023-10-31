@@ -1,0 +1,20 @@
+1. Title or name of research/training: 
+    Researching the basics of html and css
+
+2. Why are you doing it?
+
+    I'm currently not familiar with either html and css and want to learn more about them. 
+
+3. What you expect to learn/do. Be specific by identifying what code/modules will be affected by the research/training.
+
+    I want to review the main concepts for html and css and learn more about how we can implement it in our project. This includes learning how to display static text to our website and how we decorate and customize the text using css. For a large portion of my sprint tasks I'll need a basic understanding of html and css to be able to design both the homepage and subpage for our website.
+	
+
+4. What do you expect to do with it, including any code you expect to write.
+
+	I'll continue to add to the starter files that we currently have and change the overall design of our homepage/subpage that suits our project(for us this means having a design that makes it clear and accessible for users to play the games we have avaible in our site). This will include adding to our html files and customizing the design of our websites through css(or even using a template).
+	
+5. What task(s) in Jira represent the work you will do that was/is dependent on the research/training: 
+
+	- Adding an image and theme to our home page and different sub pages.
+    - Customizing our home layout and planning how we will incorpate the visuals of the game and whether we may or may not want to include a description of the game in our menu.
