@@ -2,11 +2,8 @@
 import sys 
 sys.dont_write_bytecode = True
 from flask import Flask, render_template
-<<<<<<< SCRUM-67-code-refactoring
 from chess_engine import Engine
-=======
 from player import Player
->>>>>>> adding of leaderboard to game form
 
 app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
@@ -22,9 +19,6 @@ def build_leaderboard_html():
     html_string += "<td>" + str(obj.score) + "</td></tr>"
   html_string += "</table>"
   return html_string
-  
-  
-  
 
 @app.route('/')
 def homepage():
@@ -39,7 +33,6 @@ def game():
   leaderboard = build_leaderboard_html()
   return render_template('game.html', leaderboard_game1=leaderboard)
 
-<<<<<<< SCRUM-67-code-refactoring
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
     print(depth)
@@ -54,11 +47,9 @@ def get_move(depth, fen):
 def test_get(tester):
     return tester
     
-=======
 @app.route('/pinball')
 def play_pinball():
     return render_template('pinball.html')
->>>>>>> Added the pinball game
 
 if __name__ == '__main__':
   app.run(debug=True)
