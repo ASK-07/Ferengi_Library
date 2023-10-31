@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2E382E;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+
+header {
+  background-color: #404140fe;
+  height: 35px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+
+header h1.logo {
+  margin: 5px;
+  font-size: 1.5em;
+  color: #846267;
+  text-transform: uppercase;
+  float: left;
+}
+
+header h1.logo:hover {
+  color: #846267;
+  text-decoration: none;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+/*title div class*/
+div.title {
+  padding: 0px 0 0px 0;
+  background-color: #404140fe;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+table.leaderboard {
+  width: 100px;
+  color: #846267;
+  float: right;
+  border: 1px solid #404140fe;
+}
+th, td {
+  border: 1px solid #404140fe;
+  border-collapse: collapse;
+}
+h2 {
+  font-size: 3em;
+  color: #846267;
+  margin-top: 0px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-right: 19px;
+  text-align: right;
+  color: #846267;
+}
+
+/*menu bar formatting*/
+.menu {
+  float: right;
+  margin-top: 8px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #846267;
+  text-decoration: none;
+}
