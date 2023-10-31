@@ -4,7 +4,7 @@ sys.dont_write_bytecode = True
 from flask import Flask, render_template
 from player import Player
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
@@ -34,6 +34,10 @@ def about():
 def game():
   leaderboard = build_leaderboard_html()
   return render_template('game.html', leaderboard_game1=leaderboard)
+
+@app.route('/pinball')
+def play_pinball():
+    return render_template('pinball.html')
 
 if __name__ == '__main__':
   app.run(debug=True)
