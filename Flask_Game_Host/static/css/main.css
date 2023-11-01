@@ -32,13 +32,14 @@ header h1.logo:hover {
   width: 1000px;
   margin: 0 auto;
 }
+
 /*title div class*/
 div.title {
   padding: 0px 0 0px 0;
   background-color: #404140fe;
   -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 table.leaderboard {
@@ -47,10 +48,13 @@ table.leaderboard {
   float: right;
   border: 1px solid #404140fe;
 }
-th, td {
+
+th,
+td {
   border: 1px solid #404140fe;
   border-collapse: collapse;
 }
+
 h2 {
   font-size: 3em;
   color: #846267;
@@ -86,11 +90,17 @@ h4 {
   display: inline;
 }
 
-.menu li + li {
+.menu li+li {
   margin-left: 35px;
 }
 
 .menu li a {
   color: #846267;
   text-decoration: none;
+}
+
+#board {
+  padding: 10px;
+  max-width: 500px;
+  min-width: 300px;
 }
