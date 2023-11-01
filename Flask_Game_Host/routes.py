@@ -33,6 +33,7 @@ def game():
   leaderboard = build_leaderboard_html()
   return render_template('game.html', leaderboard_game1=leaderboard)
 
+#python.exe -m pip install python-chess
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
     print(depth)
