@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="title>
-    <h2>Game Library<h2>
-    
-  </div>
+<!DOCTYPE html>
+
+<div class="title">
+  <h2>Game Library<h2>
+</div>
+
+<html>
+  <body>
+    {{ game_display|safe }}
+  </body>
+</html>
+
 {% endblock %}
