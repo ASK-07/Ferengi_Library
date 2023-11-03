@@ -39,6 +39,3 @@ gameDict = {'chess': ['Python Chess',
                             'test_URL_2'
                             ]
             }
-
-# def getGameDict():
-#     return gameDict
