@@ -4,7 +4,7 @@ def build_default_table():
     '''
     Create a table using HTML to display all games offered on the site
 
-    A maximum of 4 games are displayed per row
+    Number of games to display per row can be changed by modifying max_cols
 
     '''
     # Get dictionary storing game info
@@ -15,30 +15,37 @@ def build_default_table():
 
     # Loop through each game in dictionary and add it to the table
     col_count = 0
+    max_cols = 4                              # Number of games to display per row
     for game in gamesInfo.keys():
 
-        game_title = gamesInfo[game][0]       # Fetch title of current game
+        # Fetch info about current game
+        game_title = gamesInfo[game][0]
+        game_description = gamesInfo[game][2]
 
-        # Cap number of games per row to 4
-        if col_count < 4:
+        # Fill space in new column of current row with current game
+        if col_count < max_cols:
             html_string += '<td>'             # Open new column
 
-            # Add game_title to new column
             html_string += game_title
+            html_string += '<br>'
+            html_string += game_description
 
             html_string += '</td>'            # Close current column
             col_count += 1
+        
+        # Fill space in first column of new row with current game
         else:
-            html_string += '</tr><tr><td>'    # Close previous row, open new row, open new column
             col_count = 0
+            html_string += '</tr><tr><td>'    # Close previous row, open new row, open new column
 
-            # Add game_title to new column in new row
+            # Fill table space
             html_string += game_title
+            html_string += '<br>'
+            html_string += game_description
 
             html_string += '</td>'            # Close current column
             col_count += 1
 
-    # Close table
-    html_string += '</table>'
+    html_string += '</table>'                 # Close table
 
     return html_string
