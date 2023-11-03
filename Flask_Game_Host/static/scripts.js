@@ -4,6 +4,26 @@ var board,
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
 
+function playWhiteSound() {
+ var moveSound = document.getElementById('whiteSound');
+ if (moveSound) {
+    moveSound.play();
+ } 
+}
+
+function playBlackSound() {
+  var moveSound = document.getElementById('blackSound');
+  if (moveSound) {
+    moveSound.play();
+  }
+}
+
+function playBoardCreatedSound() {
+  var boardCreatedSound = document.getElementById('boardCreatedSound');
+  if (boardCreatedSound) {
+    boardCreatedSound.play();
+  }
+}
 
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
@@ -25,6 +45,8 @@ var onDrop = function(source, target) {
 
   // illegal move
   if (move === null) return 'snapback';
+
+  playWhiteSound();
 
   updateStatus();
   getResponseMove();
@@ -94,13 +116,17 @@ var randomResponse = function() {
 var getResponseMove = function() {
     var e = document.getElementById("sel1");
     var depth = e.options[e.selectedIndex].value;
-    fen = game.fen()
+    var fen = game.fen();
+
     $.get($SCRIPT_ROOT + "/move/" + depth + "/" + fen, function(data) {
         game.move(data, {sloppy: true});
         updateStatus();
+
+        playBlackSound();
         // This is terrible and I should feel bad. Find some way to fix this properly.
         // The animations would stutter when moves were returned too quick, so I added a 100ms delay before the animation
-        setTimeout(function(){ board.position(game.fen()); }, 100);
+        setTimeout(function() { 
+          board.position(game.fen()); });
     })
 }
 
@@ -149,7 +175,7 @@ var createTable = function() {
     for (var i = 0; i < data.length; i++) {
         html += '<tr><td>' + data[i].moveNumber + '</td><td>'
         + data[i].whiteMove + '</td><td>'
-        + data[i].blackMove + '</td></tr>';
+        + data[i].blackMove + '</td></tr>'; 
     }
 
     $('#pgn tr').first().after(html);
@@ -169,12 +195,15 @@ var takeBack = function() {
         game.undo();
     }
     board.position(game.fen());
+    playWhiteSound();
+    playBlackSound();
     updateStatus();
 }
 
 var newGame = function() {
     game.reset();
     board.start();
+    playBoardCreatedSound();
     updateStatus();
 }
 
