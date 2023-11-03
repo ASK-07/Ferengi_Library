@@ -1,4 +1,5 @@
-
+{% extends "layout.html" %}
+{% block content %}
 <!DOCTYPE html>
 <!--
 - Copyright (C) 2012 David Geary. This code is from the book
@@ -41,12 +42,19 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        color: #dda2ab; 
+        color: #dda2ab;
+      }
+
+      .pinball-container{
+        position: relative;
+        display: inline-block;
+        top: -55px;
+        left: 200px;
       }
 
       #controls-container {
-        position: absolute;
-        top: 20px;
+        position: fixed;
+        top: 75px;
         right: 20px;
         background: #191f19; 
         padding: 10px;
@@ -61,7 +69,8 @@
       #gameCanvas {
         display: block;
         margin: 0 auto;
-        background: #222; 
+        background: #222;
+        top: 50px; 
       }
 
       #showPolygonsOnlyToast {
@@ -109,6 +118,9 @@
       <audio id='pinball' preload='auto'>
          <source src="{{url_for('static', filename = 'sounds/pinball.ogg')}}" type='audio/ogg'>
       </audio>
+
+
+      <div class="pinball-container">
 
       <div id="controls-container">
          <h2>Controls</h2>
@@ -187,4 +199,6 @@
     <script src = "{{url_for('static', filename ='js/shapes.js')}}"></script>
     <script src = "{{url_for('static', filename ='js/pinball.js')}}"></script>
   </body>
+</div>
 </html>
+{% endblock %}
