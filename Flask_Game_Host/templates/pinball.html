@@ -37,14 +37,55 @@
 
     <style>
       body {
-         background: skyblue;
+        background: #2E382E; 
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #dda2ab; 
       }
-      
+
+      #controls-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #191f19; 
+        padding: 10px;
+        border-radius: 5px; 
+        box-shadow: 0 0 10px #191f19;
+      }
+
+      #controls-container p {
+         color: #846267;
+      }
+
+      #gameCanvas {
+        display: block;
+        margin: 0 auto;
+        background: #222; 
+      }
+
       #showPolygonsOnlyToast {
-         color: black;
-         position: absolute;
-         top: 20px;
-         left: 10px;
+        color: #fff;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        background: rgba(0, 0, 0, 0.8); 
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .toast input[type='checkbox'] {
+        margin-right: 5px;
+      }
+
+      
+      .toast {
+        color: #fff;
+        position: absolute;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.8); 
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
       }
 
     </style>
@@ -69,6 +110,14 @@
          <source src="{{url_for('static', filename = 'sounds/pinball.ogg')}}" type='audio/ogg'>
       </audio>
 
+      <div id="controls-container">
+         <h2>Controls</h2>
+         <p>Press "d" for left bumper</p>
+         <p>Press "k" for right bumper</p>
+         <p>Press "arrow down" to adjust spring</p>
+         <p>Press "space" to launch ball</p>
+         <p>80% Browswer zoom is recommended on smaller screen sizes</p>
+       </div>
    
       <!-- Game canvas........................................................... -->
       <canvas id='gameCanvas' width='535' height='936'>

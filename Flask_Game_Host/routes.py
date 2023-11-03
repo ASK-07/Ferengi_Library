@@ -33,8 +33,6 @@ def game():
   leaderboard = build_leaderboard_html()
   return render_template('game.html', leaderboard_game1=leaderboard)
 
-#python.exe -m pip install python-chess
-#might need to reinstall flask
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
     print(depth)
@@ -52,6 +50,21 @@ def test_get(tester):
 @app.route('/pinball')
 def play_pinball():
     return render_template('pinball.html')
+
+@app.route('/save_high_scores', methods=['POST'])
+def save_high_scores():
+    score = request.form['score']
+    name = request.form['name']
+
+    # Format the high score
+    high_score = f'{score} by {name}\n'
+
+    # Save the high score to a text file
+    with open('high_scores.txt', 'a') as file:
+        file.write(high_score)
+
+    return redirect('/')
+
 
 if __name__ == '__main__':
   app.run(debug=True)
