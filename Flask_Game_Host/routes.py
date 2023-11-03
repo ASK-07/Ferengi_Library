@@ -34,6 +34,7 @@ def game():
   return render_template('game.html', leaderboard_game1=leaderboard)
 
 #python.exe -m pip install python-chess
+#might need to reinstall flask
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
     print(depth)
