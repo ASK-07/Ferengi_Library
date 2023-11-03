@@ -168,12 +168,12 @@
       }
 
       #pausedToast p {
-         color: #dda2ab;
+         color: #000000;
       }
 
       #pausedToast p.title {
          font-size: 1.50em;
-         color: #dda2ab;
+         color: #000000;
          padding-left: 18px;
       }
 
@@ -190,11 +190,11 @@
       }
 
       div .title { 
-         color: blue;
+         color: #dda2ab;
       }
 
       div p { 
-         color: blue;
+         color: #dda2ab;
       }
 
       div a { 
@@ -214,6 +214,10 @@
          margin-top: 100px;
          text-align: center;
          display: none;
+      }
+
+      #gameOverToast p {
+         color: #000000;
       }
 
       #highScoreList {
