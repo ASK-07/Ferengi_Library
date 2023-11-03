@@ -51,19 +51,19 @@ def test_get(tester):
 def play_pinball():
     return render_template('pinball.html')
 
-@app.route('/save_high_scores', methods=['POST'])
-def save_high_scores():
-    score = request.form['score']
-    name = request.form['name']
+#@app.route('/save_high_scores', methods=['POST'])
+#def save_high_scores():
+    #score = request.form['score']
+    #name = request.form['name']
 
     # Format the high score
-    high_score = f'{score} by {name}\n'
+   # high_score = f'{score} by {name}\n'
 
     # Save the high score to a text file
-    with open('high_scores.txt', 'a') as file:
-        file.write(high_score)
+   # with open('high_scores.txt', 'a') as file:
+     #   file.write(high_score)
 
-    return redirect('/')
+   # return redirect('/')
 
 
 if __name__ == '__main__':
