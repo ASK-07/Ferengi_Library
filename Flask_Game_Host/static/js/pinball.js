@@ -344,20 +344,20 @@ updateHighScoreList = function () {
                                     ' by ' + highScore.name;  
          highScoreList.appendChild(el);
       }
-      //saveHighScoresToFile(highScores);
+      saveHighScoresToFile(highScores);
    }
    else {
       previousHighScoresTitle.style.display = 'none';
    }
 }
 function saveHighScoresToFile(highScores) {
-   //var scoreString = highScores.map(function(score) {
-   //   return score.score + ' by ' + score.name;
-  // }).join('\n');
+   var scoreString = highScores.map(function(score) {
+     return score.score + ' by ' + score.name;
+   }).join('\n');
 
-   //var textArea = document.createElement('textarea');
-   //textArea.value = scoreString;
-   //document.body.appendChild(textArea);
+   var textArea = document.createElement('textarea');
+   textArea.value = scoreString;
+   document.body.appendChild(textArea);
 
 }
 
