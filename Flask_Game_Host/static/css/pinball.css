@@ -62,7 +62,7 @@
          position: absolute;
          left: 175px;
          top: 0px;
-         color: red;
+         color: #dda2ab;
          font-size: 4.5em;
          margin-left: 70px;
       }
@@ -71,27 +71,27 @@
          position: absolute;
          left: 20px;
          top: 120px;
-         color: cornflowerblue;
+         color: #2E382E;
          margin-left: 150px;
          margin-top: 20px;
       }
 
       #gameCanvas {
          margin: 20px;
-         background: lightskyblue;
+         background: #2E382E;
          /*background: rgba(120,168,249,0.7);*/
          position: absolute;
          left: 0px;
          top: 0px;
          -webkit-box-shadow: rgba(100,100,100,0.5) 4px 4px 8px;
-         -moz-box-shadow: rgba(100,140,230,0.5) 2px 2px 6px;
-         box-shadow: rgba(100,140,230,0.5) 2px 2px 6px;
-         -o-box-shadow: rgba(100,140,230,0.5) 2px 2px 6px;
-         border: thin solid cornflowerblue;
+         -moz-box-shadow: #191f19 2px 2px 6px;
+         box-shadow: #191f19 2px 2px 6px;
+         -o-box-shadow: #191f19 2px 2px 6px;
+         border: thin solid #191f19;
       }
 
       .floatingControls {
-         background: rgba(0, 0, 0, 0.1);
+         background: #0000001a;
          border: thin solid skyblue;
          -webkit-box-shadow: rgba(0,0,0,0.3) 2px 2px 4px;
          -moz-box-shadow: rgba(100,140,230,0.5) 2px 2px 6px;
@@ -121,7 +121,7 @@
 
       #instructions p.title {
          font-size: 1.5em;
-         color: blue;
+         color: #0000ff;
       }
       
       #instructions {
@@ -164,16 +164,16 @@
          padding: 5px 40px 20px 40px;
          margin-left: 172px;
          margin-top: 100px;
-         color: blue;
+         color: #0000ff;
       }
 
       #pausedToast p {
-         color: blue;
+         color: #dda2ab;
       }
 
       #pausedToast p.title {
          font-size: 1.50em;
-         color: blue;
+         color: #dda2ab;
          padding-left: 18px;
       }
 
@@ -217,7 +217,7 @@
       }
 
       #highScoreList {
-         color: rgba(0,0,255,0.6);
+         color: #846267;
       }
 
       #previousHighScoresTitle {
