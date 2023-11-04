@@ -1,14 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #2E382E;
+  background-color: #312d2d;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #444;
+  color: #150031;
 }
 
 
 header {
-  background-color: #404140fe;
+  background-color: #1f1c1c;
   height: 35px;
   width: 100%;
   opacity: .9;
@@ -18,13 +18,13 @@ header {
 header h1.logo {
   margin: 5px;
   font-size: 1.5em;
-  color: #846267;
+  color: #dda2ab;
   text-transform: uppercase;
   float: left;
 }
 
 header h1.logo:hover {
-  color: #846267;
+  color: #dda2ab;
   text-decoration: none;
 }
 
@@ -33,31 +33,54 @@ header h1.logo:hover {
   margin: 0 auto;
 }
 
+#scoreboard_container {
+  position: fixed;
+  top: 75px;
+  right: 20px;
+  background: #191f19; 
+  padding: 10px;
+  border-radius: 5px; 
+  box-shadow: 0 0 10px #191f19;
+}
 /*title div class*/
 div.title {
   padding: 0px 0 0px 0;
-  background-color: #404140fe;
+  background-color: #1f1c1c;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
 
 table.leaderboard {
-  width: 100px;
-  color: #846267;
+  width: 300px;
+  color: #dda2ab;
+  font-size: 1.2em;
   float: right;
+  text-align: left;
+  background-color: #191f19;
   border: 1px solid #404140fe;
+  border-radius:6px;
+  min-width: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-th,
-td {
-  border: 1px solid #404140fe;
+th{
+  border: 1px solid #484646fe;
   border-collapse: collapse;
+  padding: 12px 15px;
+}
+tr:nth-child(even) {
+  background-color: #312e2e;
+}
+td {
+  border: 1px solid #484646fe;
+  border-collapse: collapse;
+  padding: 12px 15px;
 }
 
 h2 {
   font-size: 3em;
-  color: #846267;
+  color: #dda2ab;
   margin-top: 0px;
   text-align: center;
   letter-spacing: -2px;
@@ -73,11 +96,12 @@ h3 {
 }
 
 h4 {
-  font-size: 1em;
-  margin-top: 10px;
-  margin-right: 19px;
-  text-align: right;
-  color: #846267;
+  font-size: 2em;
+  color: #dda2ab;
+  margin-top: 0px;
+  text-align: center;
+  letter-spacing: -2px;
+
 }
 
 /*menu bar formatting*/
@@ -88,6 +112,7 @@ h4 {
 
 .menu li {
   display: inline;
+  text-align: left;
 }
 
 .menu li+li {
@@ -95,7 +120,7 @@ h4 {
 }
 
 .menu li a {
-  color: #846267;
+  color: #dda2ab;
   text-decoration: none;
 }
 
