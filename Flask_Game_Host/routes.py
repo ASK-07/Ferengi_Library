@@ -17,8 +17,8 @@ game_titles = [Game("Chess"), Game("Pinball")]
 top_players = Player.sort_players(top_players)
 
 def build_leaderboard_html():
-  html_string = "<table class=\"leaderboard\"><caption>" 
-  html_string += game_titles[0].title + " Scoreboard</caption><tr><th>Username</th><th>Score</th></tr>"
+  html_string = "<table class=\"leaderboard\"><caption><h4>" 
+  html_string += game_titles[0].title + " Scoreboard</h4></caption><tr><th>Username</th><th>Score</th></tr>"
   for obj in top_players:
     html_string += "<tr><td>" + obj.username + "</td>"
     html_string += "<td>" + str(obj.score) + "</td></tr>"
@@ -34,10 +34,10 @@ def homepage():
 def about():
   return render_template('about.html')
 
-@app.route('/game')
-def game():
+@app.route('/chess')
+def chess():
   leaderboard = build_leaderboard_html()
-  return render_template('game.html', leaderboard_game1=leaderboard)
+  return render_template('chess.html', leaderboard_chess=leaderboard)
 
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
