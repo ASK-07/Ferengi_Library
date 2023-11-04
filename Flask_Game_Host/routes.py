@@ -18,7 +18,7 @@ top_players = Player.sort_players(top_players)
 
 def build_leaderboard_html():
   html_string = "<table class=\"leaderboard\"><caption>" 
-  html_string += game_titles[0].title + "</caption><tr><th>Username</th><th>Score</th></tr>"
+  html_string += game_titles[0].title + " Scoreboard</caption><tr><th>Username</th><th>Score</th></tr>"
   for obj in top_players:
     html_string += "<tr><td>" + obj.username + "</td>"
     html_string += "<td>" + str(obj.score) + "</td></tr>"
