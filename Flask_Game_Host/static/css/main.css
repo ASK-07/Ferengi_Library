@@ -74,10 +74,11 @@ h3 {
 
 h4 {
   font-size: 1em;
-  margin-top: 10px;
-  margin-right: 19px;
+  margin-top: 0px;
+  margin-right: 20px;
   text-align: right;
   color: #846267;
+
 }
 
 /*menu bar formatting*/
@@ -88,6 +89,7 @@ h4 {
 
 .menu li {
   display: inline;
+  text-align: left;
 }
 
 .menu li+li {

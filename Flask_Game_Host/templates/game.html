@@ -4,6 +4,17 @@
 <html lang="en">
 
 <head>
+   <div class="title">
+      <h2>ChessBot<h2>
+   </div>
+   <html>
+   
+   <body>
+      {{ leaderboard_game1|safe }}
+   </body>
+   
+   </html>
+
    <meta charset="UTF-8">
    <title>ChessBot</title>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -92,17 +103,7 @@
 </body>
 
 </html>
-<div class="title">
-   <h2>ChessBot<h2>
-</div>
-<html>
 
-<body>
-   <h4>High Scores</h4>
-   {{ leaderboard_game1|safe }}
-</body>
-
-</html>
 
 {% endblock %}
 

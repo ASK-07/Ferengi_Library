@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ferengi</title>
+    <title>Ferengi Game Library</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
   <body>
 
     <header>
       <div class="container">
-        <h1 class="logo">Ferengi</h1>
+        <h1 class="logo">Ferengi Game Library</h1>
         <nav>
           <ul class="menu">
-            <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
             <li><a href="{{ url_for('game') }}">Game</a></li>
             <li><a href="{{ url_for('play_pinball') }}">Pinball</a></li>
+            <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
           </ul>
         </nav>
       </div>
