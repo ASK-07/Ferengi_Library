@@ -4,17 +4,21 @@ sys.dont_write_bytecode = True
 from flask import Flask, render_template
 from chess_engine import Engine
 from player import Player
+from game import Game
 from html_generator import fill_grid
 
 app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
+#temporary list of game titles to use for scoreboard
+game_titles = [Game("Chess"), Game("Pinball")]
 #calling class method to sort scores
 top_players = Player.sort_players(top_players)
 
 def build_leaderboard_html():
-  html_string = "<table class=\"leaderboard\"><tr><th>Username</th><th>Score</th></tr>"
+  html_string = "<table class=\"leaderboard\"><caption><h4>" 
+  html_string += game_titles[0].title + " Scoreboard</h4></caption><tr><th>Username</th><th>Score</th></tr>"
   for obj in top_players:
     html_string += "<tr><td>" + obj.username + "</td>"
     html_string += "<td>" + str(obj.score) + "</td></tr>"
@@ -31,10 +35,10 @@ def homepage():
 def about():
   return render_template('about.html')
 
-@app.route('/game')
-def game():
+@app.route('/chess')
+def chess():
   leaderboard = build_leaderboard_html()
-  return render_template('game.html', leaderboard_game1=leaderboard)
+  return render_template('chess.html', leaderboard_chess=leaderboard)
 
 @app.route('/move/<int:depth>/<path:fen>/')
 def get_move(depth, fen):
