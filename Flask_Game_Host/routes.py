@@ -4,7 +4,7 @@ sys.dont_write_bytecode = True
 from flask import Flask, render_template
 from chess_engine import Engine
 from player import Player
-from create_homepage_table import build_default_table
+from create_homepage_grid import fill_default_grid
 
 app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
@@ -23,8 +23,8 @@ def build_leaderboard_html():
 
 @app.route('/')
 def homepage():
-  game_table = build_default_table()
-  return render_template('homepage.html', game_display=game_table)
+  game_grid = fill_default_grid()
+  return render_template('homepage.html', game_display=game_grid)
 
 @app.route('/about')
 def about():
