@@ -4,7 +4,7 @@
 <html>
   <head>
     <style>
-
+      
       /* Better visualize div.game-grid by assigning background color */
       .game-grid {
         display: grid;
@@ -27,8 +27,7 @@
     </div>
 
     <div class="game-grid">
-      <!-- Possible bug: game grid is improperly centered with more than 4 col -->
-      {{ game_display|safe }}
+      {{ grid_display|safe }}
     </div>
 
   </body>

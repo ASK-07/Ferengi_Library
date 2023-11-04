@@ -1,7 +1,7 @@
 '''
 Dictionary storing information about games offered on the site
 
-Each key '<game>' stores:
+Each key '<game>' is the same as its route string and stores:
 
     gameDict<game>[0]: Title of game
     gameDict<game>[1]: Name of game's image file
