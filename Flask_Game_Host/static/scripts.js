@@ -136,7 +136,7 @@ var getResponseMove = function() {
 setTimeout(function() {
     board = ChessBoard('board', cfg);
     // updateStatus();
-}, 0);
+}, 100);
 
 
 var setPGN = function() {
