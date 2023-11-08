@@ -62,3 +62,38 @@ List of ready features here:
 
 ## Next Steps
 - **Jake**: "Implementing full logic to switch states, drawing to windows depending on the engine state simulating a completed product"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Sprint 2
+## Contributions
+- **Nathan**: "Deployed a pinball game to our flask app, made the game fit the overall theme of our website, and started work on how to implement a backend scoreboard"
+    - `Jira Task (SCRUM-54): Research about SFML deployment to a flask app`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-54?atlOrigin=eyJpIjoiNzhjNjNmYWM1YWJiNDFhOWI0NzkxYWYwMjFjZDUxOTEiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/29
+    - `Jira Task (SCRUM-55): Deploy the pinball game into flask`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-55?atlOrigin=eyJpIjoiODY4YzAxODZhNGZlNGUzMWFkZDk0N2RlY2QwNWQ0ZGIiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/34
+    - `Jira Task (SCRUM-56): Implement the game template so the pinball game displays nicer`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-56?atlOrigin=eyJpIjoiMzJiNzBlNWZkYzYxNGY4NjkzZmYyZWYyYzRmY2E2Y2QiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/38
+    - `Jira Task (SCRUM-57): Parse backend score keeping`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-57?atlOrigin=eyJpIjoiNjlmZDQ1OTIwMTdjNGRjNGJlY2Q4MjM0ODI0ZjIxZjMiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/39
+        - Not merged since this task was to see how the pinball game we have was storing the highscores and would break the layout of the site. 
+    - `Repo for the pinball game used`
+        - URL: https://github.com/corehtml5canvas/code/blob/master/ch09/pinball/pinball.html
+
+## Next Steps
+- **Nathan**: "Implementing the backend scoreboard keeping as well as adding in the backend and frontend to a user login in page in order to give logged in users more features" 
