@@ -73,8 +73,23 @@ List of ready features here:
 >UPDATE: We decided as a group to pivot from our previous sprint 1 project to creating a flask app that will host and run games.
 
 ## Contributions
-- **Alex**:
-
+- **Alex**: "Designed a form for a webpage that contains a game element, and a scoreboard that will display high scores of previous players."
+    - 'Jira Task (SCRUM-79): Collaborate for the successful import, display, and functionality of a game element'
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-79?atlOrigin=eyJpIjoiMmVlNjM3ODEyOTM0NDc3NDgwMzg3MzdjZTMwYjc5N2IiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/43
+    - 'Jira Task (SCRUM-76): Final formatting for scoreboard in main.css'
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-76?atlOrigin=eyJpIjoiZDNiNWM1YmQzNjM5NDA5NjliOTYzYjNhNDFhZDRkNGQiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/44
+    - 'Jira Task (SCRUM-77): Implement routes for game webpage'
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-77?atlOrigin=eyJpIjoiNDUwY2I3MjY3Yjk4NGJmNGE4NTllOTRjZGJkOWJjMDgiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/28
+    - 'Jira Task (SCRUM-74): Design layout of game webpage'
+        - https://cs3398f23ferengi.atlassian.net/browse/SCRUM-74?atlOrigin=eyJpIjoiZTliMWUyMWE1MDIxNDZkYzgzZGNkN2UzZWMwOTMzNGMiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/27
+    - 'Jira Task (SCRUM-78): Develop scoreboard functionality for high score displays (pending access to database)
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-78?atlOrigin=eyJpIjoiMmVjYzM3ZTc5ODI3NGMyNDk0M2UyNjY2ZGY2Y2RjYzAiLCJwIjoiaiJ9
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/33
+        
 - **Nathan**: "Deployed a pinball game to our flask app, made the game fit the overall theme of our website, and started work on how to implement a backend scoreboard"
     - `Jira Task (SCRUM-54): Research about SFML deployment to a flask app`
         - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-54?atlOrigin=eyJpIjoiNzhjNjNmYWM1YWJiNDFhOWI0NzkxYWYwMjFjZDUxOTEiLCJwIjoiaiJ9
@@ -91,6 +106,7 @@ List of ready features here:
         - Not merged since this task was to see how the pinball game we have was storing the highscores and would break the layout of the site. 
     - `Repo for the pinball game used`
         - URL: https://github.com/corehtml5canvas/code/blob/master/ch09/pinball/pinball.html
+        
 
 - **Heath**:
 
@@ -104,7 +120,7 @@ List of ready features here:
 
 
 ## Next Steps
-- **Alex**:
+- **Alex**: "Merge game class and info to work for scoreboard, alter menu to not include game titles, import a handful of games without access to scorekeeping and add details to homepage, look into local database"
 
 - **Nathan**:  "Implementing the backend scoreboard keeping as well as adding in the backend and frontend to a user login in page in order to give logged in users more features" 
 
