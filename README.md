@@ -11,11 +11,12 @@
 
 
 ## General Information
-> This project is designed for users and developers
+> OLD:This project is designed for users and developers
 > such as ourselves interested in learning and implementing an engine such as this from the ground up. Our 
 > system will be designed to be intentionally simplified to be accessible to any user and developer to
 > understand comprehensively no matter their education.
 >
+> Update: We decided to pivot from our previous idea of creating a 2d physics engine to implementing a flask app that hosts a number of games in our website. Our website will be able to run each game and display the highest scores for the different games that we currently have available.
 ![Template Logo](./img/FERENGI-logos.jpeg)
 
 
@@ -23,6 +24,10 @@
 ## Technologies Used
 - C++
 - Java
+- Python
+- Flask
+- HTML/CSS
+- Javascript
 
 
 ## Features
@@ -62,3 +67,34 @@ List of ready features here:
 
 ## Next Steps
 - **Jake**: "Implementing full logic to switch states, drawing to windows depending on the engine state simulating a completed product"
+
+
+## Sprint 2
+>UPDATE: We decided as a group to pivot from our previous sprint 1 project to creating a flask app that will host and run games.
+
+## Contributions
+- **Alex**:
+
+- **Nathan**:
+
+- **Heath**:
+
+- **Jake**
+
+- **Jaime**: "As a User I would want a home page that is concise and showcases the menu for our game."
+    - 'Jira Task (SCRUM-72): Setting up the flask app repo from previous assignment'
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&issueParent=10064&selectedIssue=SCRUM-72
+    - 'Jira Task (SCRUM-75): Research the basics of HTML and CSS'
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?epics=visible&issueParent=10064&selectedIssue=SCRUM-75
+
+
+## Next Steps
+- **Alex**:
+
+- **Nathan**:
+
+- **Heath**:
+
+- **Jake**
+
+- **Jaime**: "Import another game into our flask app and work in keeping track of scores in the backend or continue to update our front-end."
