@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #312d2d;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #150031;
+}
+
+header {
+  background-color: #1f1c1c;
+  height: 58px;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+}
+/*menu bar formatting*/
+.menu {
+  float: right;
+  margin-top: 4px;
+}
+
+header h1.logo {
+  vertical-align: middle;
+  font-size: 1.5em;
+  color: #dda2ab;
+  text-transform: uppercase;
+  float: left;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.menu li {
+  vertical-align: middle;
+  display: inline;
+  text-align: left;
+}
+
+.menu li+li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: #dda2ab;
+  text-decoration: none;
+}
+
+/*title div class*/
+div.title {
+  margin-top: 5px;
+  background-color: #1f1c1c;
+}
