@@ -2,10 +2,11 @@
     This module defines the flask app's route decorators
 
 '''
+#from Flask_Game_Host import app
+#from Flask_Game_Host import app
 from Flask_Game_Host import app
 from flask import render_template
 from Flask_Game_Host.html_generator import fill_grid
-from Flask_Game_Host.chess_engine import Engine
 from Flask_Game_Host.player import Player
 from Flask_Game_Host.game import Game
 
@@ -44,21 +45,9 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/chess')
-def chess():
-  leaderboard = build_leaderboard_html()
-  return render_template('chess.html', leaderboard_chess=leaderboard)
-
-
-@app.route('/move/<int:depth>/<path:fen>/')
-def get_move(depth, fen):
-    print(depth)
-    print("Calculating...")
-    engine = Engine(fen)
-    move = engine.iterative_deepening(depth - 1)
-    print("Move found!", move)
-    print()
-    return move
+@app.route('/2048')
+def play_2048():
+   return render_template('2048.html')
 
 
 @app.route('/test/<string:tester>')
@@ -84,4 +73,3 @@ def play_pinball():
      #   file.write(high_score)
 
    # return redirect('/')
-   
