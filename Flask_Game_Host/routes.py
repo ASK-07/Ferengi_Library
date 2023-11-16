@@ -78,6 +78,10 @@ def play_billard():
 def play_multi_square():
     return render_template('multiSquare.html')
 
+@app.route('/chess1')
+def play_chess():
+    return render_template('chess1.html')
+
 
 #@app.route('/save_high_scores', methods=['POST'])
 #def save_high_scores():
