@@ -73,5 +73,3 @@ def play_pinball():
      #   file.write(high_score)
 
    # return redirect('/')
-if __name__ == '__main__':
-  app.run(debug=True)
