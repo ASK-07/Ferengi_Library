@@ -4,11 +4,19 @@
 '''
 #from Flask_Game_Host import app
 #from Flask_Game_Host import app
-from Flask_Game_Host import app
-from flask import render_template
-from Flask_Game_Host.html_generator import fill_grid
-from Flask_Game_Host.player import Player
-from Flask_Game_Host.game import Game
+#from Flask_Game_Host import app
+#from flask import render_template
+#from Flask_Game_Host.html_generator import fill_grid
+#from Flask_Game_Host.player import Player
+#from Flask_Game_Host.game import Game
+import sys 
+sys.dont_write_bytecode = True
+from flask import Flask, render_template
+from player import Player
+from game import Game
+from html_generator import fill_grid
+
+app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
 
 
@@ -73,3 +81,5 @@ def play_pinball():
      #   file.write(high_score)
 
    # return redirect('/')
+if __name__ == '__main__':
+  app.run(debug=True)
