@@ -70,6 +70,10 @@ def test_get(tester):
 def play_pinball():
     return render_template('pinball.html')
 
+@app.route('/billiard')
+def play_billard():
+    return render_template('billiard.html')
+
 
 #@app.route('/save_high_scores', methods=['POST'])
 #def save_high_scores():
