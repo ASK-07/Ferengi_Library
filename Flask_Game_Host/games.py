@@ -9,11 +9,7 @@ Each key '<game>' is the same as its route string and stores:
     gameDict<game>[3]: URL of game's source repository
 
 '''
-gameDict = {'chess': ['Python Chess',
-                      'chess.png',
-                      'Classic tabletop chess',
-                      'https://github.com/niklasf/python-chess/tree/master'
-                      ],
+gameDict = {
 
             'pinball': ['Pinball',
                         'pinball.png',
