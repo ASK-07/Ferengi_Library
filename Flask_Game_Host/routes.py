@@ -59,6 +59,18 @@ def test_get(tester):
 def play_pinball():
     return render_template('pinball.html')
 
+@app.route('/billiard')
+def play_billard():
+    return render_template('billiard.html')
+
+@app.route('/multi-square')
+def play_multi_square():
+    return render_template('multiSquare.html')
+
+@app.route('/chess1')
+def play_chess():
+    return render_template('chess1.html')
+
 
 #@app.route('/save_high_scores', methods=['POST'])
 #def save_high_scores():
