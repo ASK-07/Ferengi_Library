@@ -1,0 +1,21 @@
+1. Title or name of research/training
+
+Implementation of HTML + CSS websites
+
+2. Why you are doing it.
+
+No one in my team is experienced implementing HTML and CSS files to create webpages, which is an important part of our project.
+
+3. What you expect to learn/do.   
+
+I expect to learn how to implement these files in a way that deviates from our flask app template noticably. 
+
+4. What do you expect to do with it, including any code you expect to write.  
+
+I want to update the classes for our text, containers, body, and menu, as well as use images in the about page. I want to add a little image of Ferengi as our homepage button in our menu to create a sense of humor in the design as well.
+
+4. What task(s) in Jira represent the work you will do that was/is dependent on the research/training.
+
+Scrum 88, 91, 92, 93
+
+(the other files in this directory are a simple demo of a webpage where I was attempting some of the intended changes)

@@ -2,7 +2,7 @@ from games import gameDict
 
 def fill_grid():
     '''
-    Uses dictionary of games to create HTML string containing aggregate of game-cell divs
+        Uses dictionary of games to create HTML string containing aggregate of game-cell divs
 
     '''
     # Get dictionary storing game info
@@ -23,10 +23,7 @@ def fill_grid():
         game_anchor = '<a href="/' + game + '">'
 
         # Create html string that loads current game's image
-        image_string = '<img src="img/' + game_image + '" alt="' + game_image + '"/>'
-
-        # Keeping this here to remember the pain
-        # image_string = '<img src="{{ url_for(\'static\', filename=\'' + game_image + '\') }}" alt="' + game_image + '" class="image" />'
+        image_string = '<img src="static/img/' + game_image + '" alt="' + game_image + '"/>'
 
         # Turn current game into game-cell div
         game_cells += '<div class="game-cell">'                             # Open game-cell div

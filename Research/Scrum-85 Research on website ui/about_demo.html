@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Ferengi Game Library</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
 
@@ -11,18 +11,21 @@
         <h1 class="logo">Ferengi Game Library</h1>
         <nav>
           <ul class="menu">
-            <li><a href="{{ url_for('play_2048') }}">2048</a></li>
-            <li><a href="{{ url_for('play_pinball') }}">Pinball</a></li>
-            <li><a href="{{ url_for('homepage') }}">Homepage</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('homepage') }}"><img src="./ferengi_head.png" alt="Ferengi" height = "50"></a></li>
           </ul>
         </nav>
       </div>
     </header> 
 
     <div class="container">
-      {% block content %}
-      {% endblock %}
+    
+      <h2>About</h2>
+      <p>This is a game library</p>
+    
+  
     </div>
 
   </body>
 </html>
+
