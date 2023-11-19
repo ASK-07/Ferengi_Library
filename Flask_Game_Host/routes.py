@@ -20,7 +20,6 @@ app = Flask(__name__, static_url_path='', static_folder='static',template_folder
 
 
 
-# <can be moved to html_generator once MongoDB API implemented>
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
 #temporary list of game titles to use for scoreboard
