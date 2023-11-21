@@ -1,0 +1,5 @@
+Using nginx allows fluent connection between flask and gunicorn. This allows the website to instantly connect when the instance is open, without the need to run commands
+
+gunicorn -b 0.0.0.0:8000 routes:app
+
+sudo systemctl restart nginx
