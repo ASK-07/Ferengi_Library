@@ -1,0 +1,50 @@
+1. Title or name of research/training:
+
+Connecting to MongoDB Using Flask-PyMongo Drivers
+
+
+
+2. Why are you doing it.
+
+The purpose of this research document is to provide clarification for how to connect to the remote database.
+
+
+
+3. What you expect to learn/do. Be specific by identifying what code/modules will be affected by the research/training.
+
+This document aims to provide documentation for how to generate a MONGO_URI key in order to connect to the remote database through the flask app.
+
+Through this research, we will learn what structure the connection string must conform to in order to connect to our database through the particular drivers we are using.
+
+The confusion could lay within the difference between the native PyMongo drivers, and the more specialized flask-pymongo drivers.
+
+As I understand, the native PyMongo drivers require more *dependencies than the flask-pymongo drivers.
+
+When using the native drivers with the *dependencies, reading/writing to the database should work as expected.
+
+I believe the flask-pymongo ddrivers that are currently being used will work if we are able to correctly configure our connection strings.
+
+
+
+4. What do you expect to do with it, including any code you expect to write.  Be specific.  For example, "Writing the UI" is not sufficient.   "Writing the Login class" is.
+
+The RESTful API is partially implemented, but we are unable to read/write to the database through the flask app until a valid connection is established.
+Once this issue is solved, the API should work as expected.
+
+
+
+5. What task(s) in Jira represent the work you will do that was/is dependent on the research/training:
+
+All tasks are reliant on finding a solution through this research, across multiple User Stories...
+
+Making this issue a top priority.
+
+
+
+*Dependencies for native PyMongo drivers: https://www.mongodb.com/docs/atlas/tutorial/connect-to-your-cluster/
+
+Flask-PyMongo documentation: https://flask-pymongo.readthedocs.io/en/latest/
+PyMongo documentation: https://pymongo.readthedocs.io/en/stable/
+
+Possible solutions: https://stackoverflow.com/questions/75225929/flask-pymongo-db-is-returning-as-none
+

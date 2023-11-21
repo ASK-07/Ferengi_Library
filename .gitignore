@@ -48,3 +48,18 @@ Thumbs.db
 *.mov
 *.wmv
 
+# These were in another .gitignore inside Flask_Game_Host dir ?
+.env
+
+__pycache__/
+__pycache__/**
+
+.DS_Store
+
+.venv/**
+.venv/
+
+venv/**
+venv/
+
+.project
