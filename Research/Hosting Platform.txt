@@ -1,0 +1,3 @@
+The hosting/deployment platform I picked was, AWS EC2. This allows us to easily and effectively update our deployment sever with changes throughout the sprint. 
+I tried going through AWS Lambda function, however with our flask app it was hard to get a good connection for deploying. I then switch to Heroku which did not
+seem to connect either, it was definitely user error. 
