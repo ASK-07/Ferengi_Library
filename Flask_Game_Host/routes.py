@@ -2,33 +2,25 @@
     This module defines the flask app's route decorators
 
 '''
-
-#Image referecing problem has been resolved, had to comment out some db things and tweak hierarchy
-#
-#from Flask_Game_Host import app
-#from Flask_Game_Host import app
-#from Flask_Game_Host import app
-#from flask import render_template
-#from Flask_Game_Host.html_generator import fill_grid
-#from Flask_Game_Host.player import Player
-#from Flask_Game_Host.game import Game
+from Flask_Game_Host import app
+from flask import render_template
+from Flask_Game_Host.html_generator import fill_grid
+from Flask_Game_Host.player import Player
+from Flask_Game_Host.game import Game
 import sys 
 sys.dont_write_bytecode = True
-from flask import Flask, render_template
-from player import Player
-from html_generator import fill_grid
-from game import Game
+from flask import jsonify, request, Blueprint
+from .mongo_config import mongo
 
-
-app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
-
-# <can be moved to html_generator once MongoDB API implemented>
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
 #temporary list of game titles to use for scoreboard
 game_titles = [Game("Chess"), Game("Pinball")]
 #calling class method to sort scores
 top_players = Player.sort_players(top_players)
+
+
+routes_app = Blueprint('routes', __name__)
 
 def build_leaderboard_html():
   html_string = "<table class=\"leaderboard\"><caption><h4>" 
@@ -38,9 +30,6 @@ def build_leaderboard_html():
     html_string += "<td>" + str(obj.score) + "</td></tr>"
   html_string += "</table>"
   return html_string
-
-
-
 
 
 @app.route('/')
@@ -83,6 +72,3 @@ def play_pinball():
      #   file.write(high_score)
 
    # return redirect('/')
-
-if __name__ == '__main__':
-  app.run(debug=True)

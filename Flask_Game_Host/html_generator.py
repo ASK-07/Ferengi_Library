@@ -1,4 +1,4 @@
-from games import gameDict
+from Flask_Game_Host.games import gameDict
 
 def fill_grid():
     '''
