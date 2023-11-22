@@ -9,7 +9,8 @@ from Flask_Game_Host.player import Player
 from Flask_Game_Host.game import Game
 import sys 
 sys.dont_write_bytecode = True
-
+from flask import jsonify, request, Blueprint
+from .mongo_config import mongo
 
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
@@ -17,6 +18,9 @@ top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Pla
 game_titles = [Game("Chess"), Game("Pinball")]
 #calling class method to sort scores
 top_players = Player.sort_players(top_players)
+
+
+routes_app = Blueprint('routes', __name__)
 
 def build_leaderboard_html():
   html_string = "<table class=\"leaderboard\"><caption><h4>" 
@@ -26,9 +30,6 @@ def build_leaderboard_html():
     html_string += "<td>" + str(obj.score) + "</td></tr>"
   html_string += "</table>"
   return html_string
-
-
-
 
 
 @app.route('/')
@@ -69,6 +70,49 @@ def play_multi_square():
 def play_chess():
     return render_template('chess1.html')
 
+@routes_app.route('/get_player_data', methods=['GET'])
+def get_player_data():
+    if request.method == 'GET':
+        player_name = request.args.get('player_name')
+        print(f"Searching for player: {player_name}")
+
+        # Exclude _id field from the result
+        player_data = mongo.db.HostedGames.find_one({'player_name': player_name}, {'_id': 0})
+
+        if player_data:
+            # Print player_data to the terminal
+            print("Player Data:")
+            for key, value in player_data.items():
+                print(f"{key}: {value}")
+
+            return jsonify(player_data)
+        else:
+            print("Player not found")
+            return jsonify({'error': 'Player not found'}), 404
+        
+@routes_app.route('/get_top_5_scores', methods=['GET'])
+def get_top_5_scores():
+    if request.method == 'GET':
+        # Sort by score in descending order and limit to 5
+        top_5_scores = mongo.db.HostedGames.find(
+            filter={},
+            sort=[('score', -1)],
+            projection={'_id': False},
+            limit=5
+        )
+
+        if top_5_scores:
+            # Print top 5 scores to the terminal
+            print("Top 5 Scores:")
+            for player_data in top_5_scores:
+                for key, value in player_data.items():
+                    print(f"{key}: {value}")
+                print("---")
+
+            return jsonify({'top_5_scores': list(top_5_scores)})
+        else:
+            print("No scores found")
+            return jsonify({'error': 'No scores found'}), 404
 
 #@app.route('/save_high_scores', methods=['POST'])
 #def save_high_scores():
@@ -83,6 +127,3 @@ def play_chess():
      #   file.write(high_score)
 
    # return redirect('/')
-
-#if __name__ == '__main__':
-  #app.run(debug=True)
