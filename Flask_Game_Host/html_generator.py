@@ -23,7 +23,7 @@ def fill_grid():
         game_anchor = '<a href="/' + game + '">'
 
         # Create html string that loads current game's image
-        image_string = '<img src="static/img/' + game_image + '" alt="' + game_image + '"/>'
+        image_string = '<img src="img/' + game_image + '" alt="' + game_image + '"/>'
 
         # Turn current game into game-cell div
         game_cells += '<div class="game-cell">'                             # Open game-cell div

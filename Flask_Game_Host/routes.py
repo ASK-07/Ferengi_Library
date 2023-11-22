@@ -2,6 +2,9 @@
     This module defines the flask app's route decorators
 
 '''
+
+#Image referecing problem has been resolved, had to comment out some db things and tweak hierarchy
+#
 #from Flask_Game_Host import app
 #from Flask_Game_Host import app
 #from Flask_Game_Host import app
@@ -13,13 +16,13 @@ import sys
 sys.dont_write_bytecode = True
 from flask import Flask, render_template
 from player import Player
-from game import Game
 from html_generator import fill_grid
+from game import Game
+
 
 app = Flask(__name__, static_url_path='', static_folder='static',template_folder='templates')
 
-
-
+# <can be moved to html_generator once MongoDB API implemented>
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
 #temporary list of game titles to use for scoreboard
@@ -66,18 +69,6 @@ def test_get(tester):
 def play_pinball():
     return render_template('pinball.html')
 
-@app.route('/billiard')
-def play_billard():
-    return render_template('billiard.html')
-
-@app.route('/multi-square')
-def play_multi_square():
-    return render_template('multiSquare.html')
-
-@app.route('/chess1')
-def play_chess():
-    return render_template('chess1.html')
-
 
 #@app.route('/save_high_scores', methods=['POST'])
 #def save_high_scores():
@@ -92,5 +83,6 @@ def play_chess():
      #   file.write(high_score)
 
    # return redirect('/')
+
 if __name__ == '__main__':
   app.run(debug=True)
