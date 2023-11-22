@@ -85,7 +85,7 @@ var game = new Game('pinball', 'gameCanvas'),
    ACTUATOR_PLATFORM_HEIGHT = 10,
 
    actuatorSprite = new Sprite('actuator',
-                     new ImagePainter('static/img/actuator-0.png')),
+                     new ImagePainter('/img/actuator-0.png')),
 
    // Ball.......................................................
 
@@ -157,7 +157,7 @@ var game = new Game('pinball', 'gameCanvas'),
    },
 
    ballSprite = new Sprite('ball',
-                     new ImagePainter('static/img/ball.png'),
+                     new ImagePainter('/img/ball.png'),
                      [ ballMover ]),
 
    ballShape = new SpriteShape(ballSprite, ballSprite.width, ballSprite.height),
@@ -665,13 +665,13 @@ function showTryAgainImage() {
 
    game.context.clip();
 
-   game.context.drawImage(game.getImage('static/img/tryAgain.png'), 0,
+   game.context.drawImage(game.getImage('/img/tryAgain.png'), 0,
                           game.context.canvas.height-200);
    game.context.restore();
 };
 
 function drawExtraBall(index) {
-   game.context.drawImage(game.getImage('static/img/ball.png'),
+   game.context.drawImage(game.getImage('/img/ball.png'),
       EXTRA_BALLS_RIGHT - EXTRA_BALL_WIDTH*index,
                           EXTRA_BALLS_BOTTOM);
 };
@@ -702,38 +702,38 @@ var FIVE_HUNDRED_BUMPER_LEFT = 216,
 
 function drawLitBumper() {
    if (bumperLit === fiveHundredBumper) {
-      game.context.drawImage(game.getImage('static/img/fiveHundredBumperBright.png'),
+      game.context.drawImage(game.getImage('/img/fiveHundredBumperBright.png'),
                              FIVE_HUNDRED_BUMPER_LEFT,
                              FIVE_HUNDRED_BUMPER_RIGHT);
    }
    else if (bumperLit === oneHundredBumperLeft) {
-      game.context.drawImage(game.getImage('static/img/oneHundredBumperBright.png'),
+      game.context.drawImage(game.getImage('/img/oneHundredBumperBright.png'),
                              ONE_HUNDRED_BUMPER_LEFT,
                              ONE_HUNDRED_BUMPER_RIGHT);
    }
    else if (bumperLit === oneHundredBumperRight) {
-      game.context.drawImage(game.getImage('static/img/oneHundredBumperBright.png'),355,288);
+      game.context.drawImage(game.getImage('/img/oneHundredBumperBright.png'),355,288);
    }
    else if (bumperLit === fiftyBumper) {
-      game.context.drawImage(game.getImage('static/img/fiftyBumperBright.png'),215,434);
+      game.context.drawImage(game.getImage('/img/fiftyBumperBright.png'),215,434);
    }
    else if (bumperLit === oneXBumperLeft) {
-      game.context.drawImage(game.getImage('static/img/oneXBumperLeftBright.png'),71,776);
+      game.context.drawImage(game.getImage('/img/oneXBumperLeftBright.png'),71,776);
    }
    else if (bumperLit === oneXBumperRight) {
-      game.context.drawImage(game.getImage('static/img/oneXBumperRightBright.png'),305,775);
+      game.context.drawImage(game.getImage('/img/oneXBumperRightBright.png'),305,775);
    }
    else if (bumperLit === twoXBumperLeft) {
-      game.context.drawImage(game.getImage('static/img/twoXBumperLeftBright.png'), 93, 632);
+      game.context.drawImage(game.getImage('/img/twoXBumperLeftBright.png'), 93, 632);
    }
    else if (bumperLit === twoXBumperRight) {
-      game.context.drawImage(game.getImage('static/img/twoXBumperRightBright.png'),333,631);
+      game.context.drawImage(game.getImage('/img/twoXBumperRightBright.png'),333,631);
    }
    else if (bumperLit === fiveXBumperLeft) {
-      game.context.drawImage(game.getImage('static/img/fiveXBumperLeftBright.png'),95,450);
+      game.context.drawImage(game.getImage('/img/fiveXBumperLeftBright.png'),95,450);
    }
    else if (bumperLit === fiveXBumperRight) {
-      game.context.drawImage(game.getImage('static/img/fiveXBumperRightBright.png'),350,450);
+      game.context.drawImage(game.getImage('/img/fiveXBumperRightBright.png'),350,450);
    }
 }
 
@@ -778,7 +778,7 @@ game.paintUnderSprites = function () {
    }
    else {
       if (!showingHighScores) {
-         game.context.drawImage(game.getImage('static/img/background.png'),0,0);
+         game.context.drawImage(game.getImage('/img/background.png'),0,0);
 
          drawLitBumper();
 
@@ -893,13 +893,13 @@ function paintLeftFlipper() {
       game.context.save();
       game.context.translate(LEFT_FLIPPER_PIVOT_X, LEFT_FLIPPER_PIVOT_Y);
       game.context.rotate(-leftFlipperAngle);
-      game.context.drawImage(game.getImage('static/img/leftFlipper.png'),
+      game.context.drawImage(game.getImage('/img/leftFlipper.png'),
                              -LEFT_FLIPPER_PIVOT_OFFSET_X,
                              -LEFT_FLIPPER_PIVOT_OFFSET_Y);
       game.context.restore();
    }
    else {
-      game.context.drawImage(game.getImage('static/img/leftFlipper.png'),
+      game.context.drawImage(game.getImage('/img/leftFlipper.png'),
             LEFT_FLIPPER_PIVOT_X - LEFT_FLIPPER_PIVOT_OFFSET_X,
             LEFT_FLIPPER_PIVOT_Y - LEFT_FLIPPER_PIVOT_OFFSET_Y);
    }
@@ -909,11 +909,11 @@ function paintRightFlipper() {
       game.context.save();
       game.context.translate(370,776);
       game.context.rotate(rightFlipperAngle);
-      game.context.drawImage(game.getImage('static/img/rightFlipper.png'),-99,-29);
+      game.context.drawImage(game.getImage('/img/rightFlipper.png'),-99,-29);
       game.context.restore();
    }
    else {
-      game.context.drawImage(game.getImage('static/img/rightFlipper.png'),272,745);
+      game.context.drawImage(game.getImage('/img/rightFlipper.png'),272,745);
    }
 }
 
@@ -1394,28 +1394,28 @@ leftFlipperShape.centroid = function () {
 
 showingHighScores = false;
 
-game.queueImage('static/img/rightFlipper.png');
-game.queueImage('static/img/leftFlipper.png');
-game.queueImage('static/img/ball.png');
-game.queueImage('static/img/tryAgain.png');
+game.queueImage('/img/rightFlipper.png');
+game.queueImage('/img/leftFlipper.png');
+game.queueImage('/img/ball.png');
+game.queueImage('/img/tryAgain.png');
 
-game.queueImage('static/img/fiftyBumperBright.png');
-game.queueImage('static/img/oneHundredBumperBright.png');
-game.queueImage('static/img/fiveHundredBumperBright.png');
+game.queueImage('/img/fiftyBumperBright.png');
+game.queueImage('/img/oneHundredBumperBright.png');
+game.queueImage('/img/fiveHundredBumperBright.png');
 
-game.queueImage('static/img/oneXBumperLeftBright.png');
-game.queueImage('static/img/oneXBumperRightBright.png');
+game.queueImage('/img/oneXBumperLeftBright.png');
+game.queueImage('/img/oneXBumperRightBright.png');
 
-game.queueImage('static/img/twoXBumperRightBright.png');
-game.queueImage('static/img/twoXBumperLeftBright.png');
+game.queueImage('/img/twoXBumperRightBright.png');
+game.queueImage('/img/twoXBumperLeftBright.png');
 
-game.queueImage('static/img/fiveXBumperRightBright.png');
-game.queueImage('static/img/fiveXBumperLeftBright.png');
-game.queueImage('static/img/tryAgain.png');
-game.queueImage('static/img/background.png');
+game.queueImage('/img/fiveXBumperRightBright.png');
+game.queueImage('/img/fiveXBumperLeftBright.png');
+game.queueImage('/img/tryAgain.png');
+game.queueImage('/img/background.png');
 
 for (var i=0; i < LAUNCH_STEPS; ++i) {
-   game.queueImage('static/img/actuator-' + i + '.png');
+   game.queueImage('/img/actuator-' + i + '.png');
 }
 
 
@@ -1446,7 +1446,7 @@ var interval = setInterval( function (e) {
 
       for (var i=0; i < LAUNCH_STEPS; ++i) {
          launchImages[i] = new Image();
-         launchImages[i].src = 'static/img/actuator-' + i + '.png';
+         launchImages[i].src = '/img/actuator-' + i + '.png';
       }
       game.start();
    }
