@@ -1,7 +1,3 @@
-'''
-    This module defines the flask app's route decorators
-
-'''
 from Flask_Game_Host import app
 from flask import render_template
 from Flask_Game_Host.html_generator import fill_grid
@@ -74,7 +70,7 @@ def play_chess():
     return render_template('chess1.html')
 
 
-@routes_app.route('/get_player_data', methods=['GET'])
+@app.route('/get_player_data', methods=['GET'])
 def get_player_data():
     if request.method == 'GET':
         player_name = request.args.get('player_name')
@@ -93,9 +89,9 @@ def get_player_data():
         else:
             print("Player not found")
             return jsonify({'error': 'Player not found'}), 404
-       
-        
-@routes_app.route('/get_top_5_scores', methods=['GET'])
+
+
+@app.route('/get_top_5_scores', methods=['GET'])
 def get_top_5_scores():
     if request.method == 'GET':
         # Sort by score in descending order and limit to 5
@@ -118,6 +114,15 @@ def get_top_5_scores():
         else:
             print("No scores found")
             return jsonify({'error': 'No scores found'}), 404
+        
+        
+@app.route('/OpenSourceGames/<game_name>')
+def play_game(game_name):
+
+    if game_name:
+        return render_template(f'{game_name}.html')
+    else:
+        return 'Game not found', 404
 
 
 #@app.route('/save_high_scores', methods=['POST'])

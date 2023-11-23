@@ -1,7 +1,3 @@
-'''
-    This module initializes the flask app and configures extensions
-
-'''
 from flask import Flask, app
 from .mongo_config import mongo
 
