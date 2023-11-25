@@ -344,6 +344,7 @@ updateHighScoreList = function () {
                                     ' by ' + highScore.name;  
          highScoreList.appendChild(el);
       }
+      //Fetches highscores array and sends it to routes
       fetch('/HighScores', { 
          method: 'POST', 
          headers: {

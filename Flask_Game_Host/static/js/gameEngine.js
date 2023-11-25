@@ -356,7 +356,7 @@ Game.prototype = {
    getHighScores: function () {
       var key = this.gameName + this.HIGH_SCORES_SUFFIX,
           highScoresString = localStorage[key];
-
+         
       if (highScoresString == undefined) {
          localStorage[key] = JSON.stringify([]);
       }
@@ -368,7 +368,7 @@ Game.prototype = {
    setHighScore: function (highScore) {
       var key = this.gameName + this.HIGH_SCORES_SUFFIX,
           highScoresString = localStorage[key];
-      
+          
       highScores.unshift(highScore);
       localStorage[key] = JSON.stringify(highScores);
    },
