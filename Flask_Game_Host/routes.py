@@ -34,6 +34,11 @@ def homepage():
     game_grid = fill_grid()
     return render_template('homepage.html', grid_display=game_grid)
 
+@app.route('/highscores', methods=['POST'])
+def highscores():
+    highScores = request.json['highScores']
+    result = highScores
+    return jsonify({'result' : result})
 
 @app.route('/about')
 def about():
