@@ -69,10 +69,29 @@ def play_billard():
 def play_multi_square():
     return render_template('multiSquare.html')
 
-
-@app.route('/chess1')
+@app.route('/chess')
 def play_chess():
-    return render_template('chess1.html')
+    return render_template('chess.html')
+
+@app.route('/cannon-balls-3d')
+def play_cannon_3D():
+    return render_template('cannon3d.html')
+
+@app.route('/checkers')
+def play_checkers():
+    return render_template('checkers.html')
+
+@app.route('/table-tennis')
+def play_tennis():
+    return render_template('tableTennis.html')
+
+@app.route('/bowling')
+def play_bowling():
+    return render_template('bowling.html')
+
+@app.route('/archery-tour')
+def play_archery():
+    return render_template('archery.html')
 
 
 @app.route('/get_player_data', methods=['GET'])

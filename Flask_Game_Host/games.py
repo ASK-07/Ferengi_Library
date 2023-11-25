@@ -21,51 +21,51 @@ gameDict = {
                       'Classic 2048',
                       'https://github.com/gabrielecirulli/2048'
 	                 ],
-            'test_game_0': ['test_title_0',
-                            'gex.png',
-                            'test_description_0',
-                            'test_URL_0'
+            'chess': ['Chess',
+                            'Chess.jpg',
+                            'Chess Classic',
+                            'https://play.famobi.com/chess-classic'
                             ],
 
-            'test_game_1': ['test_title_1',
-                            'smackdown.png',
-                            'test_description_1',
-                            'test_URL_1'
+            'multi-square': ['Multi-Square',
+                            'Multisquare.jpg',
+                            'Multi-Square',
+                            'https://play.famobi.com/multisquare'
                             ],
 
-            'test_game_2': ['test_title_2',
-                            'homescapes.png',
-                            'test_description_2',
-                            'test_URL_2'
+            'billiard': ['Billiard',
+                            '8BallBilliards.jpg',
+                            '8-Ball-Billiard',
+                            'https://play.famobi.com/8-ball-billiards-classic'
                             ],
 
-            'test_game_3': ['test_title_3',
-                            'bugsnax.png',
-                            'test_description_3',
-                            'test_URL_3'
+            'cannon-balls-3d': ['Cannon-Balls-3D',
+                            'CannonBalls3d.jpg',
+                            'Cannon-Balls-3D',
+                            'https://play.famobi.com/cannon-balls-3d'
                             ],
 
-            'test_game_4': ['test_title_4',
-                            'crying.png',
-                            'test_description_4',
-                            'test_URL_4'
+            'archery-tour': ['Archery',
+                            'ArcheryWorldTour.jpg',
+                            'Archery World Tour',
+                            'https://play.famobi.com/archery-world-tour'
                             ],
 
-            'test_game_5': ['test_title_5',
-                            'evil.png',
-                            'test_description_5',
-                            'test_URL_5'
+            'bowling': ['Bowling',
+                            'ClassicBowling.jpg',
+                            'Classic Bowling',
+                            ' https://play.famobi.com/classic-bowling'
                             ],
             
-            'test_game_6': ['test_title_6',
-                            'test_image_6.png',
-                            'test_description_6',
-                            'test_URL_6'
+            'table-tennis': ['Table-Tennis',
+                            'TableTennis.jpg',
+                            'Table Tennis World Tour',
+                            'https://play.famobi.com/table-tennis-world-tour'
                             ],
 
-            'test_game_7': ['test_title_7',
-                            'test_image_7.png',
-                            'test_description_7',
-                            'test_URL_7'
+            'checkers': ['Checkers',
+                            'CheckersClassic.jpg',
+                            'Checkers Classic',
+                            'https://play.famobi.com/checkers-classic'
                             ]
             }
