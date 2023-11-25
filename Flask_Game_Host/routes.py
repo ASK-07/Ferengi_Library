@@ -70,9 +70,9 @@ def play_multi_square():
     return render_template('multiSquare.html')
 
 
-@app.route('/chess1')
+@app.route('/chess')
 def play_chess():
-    return render_template('chess1.html')
+    return render_template('chess.html')
 
 
 @app.route('/get_player_data', methods=['GET'])
