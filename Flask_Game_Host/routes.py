@@ -1,12 +1,14 @@
-from Flask_Game_Host import app
-from flask import render_template
+from Flask_Game_Host import app, db
+from flask import redirect, render_template
 from Flask_Game_Host.html_generator import fill_grid
 from Flask_Game_Host.player import Player
 from Flask_Game_Host.game import Game
+from Flask_Game_Host.forms import GameForm
 import sys 
 sys.dont_write_bytecode = True
 from flask import jsonify, request, Blueprint
 from .mongo_config import mongo
+from datetime import datetime
 
 #temporary list of scores
 top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
@@ -120,7 +122,42 @@ def get_top_5_scores():
             print("No scores found")
             return jsonify({'error': 'No scores found'}), 404
         
-        
+# DEV endpoint, should not be shipped with production
+@app.route('/add', methods=['GET', 'POST'])
+def add():
+
+  # Initialize form
+  form = GameForm(request.form)
+
+  # When information sent to server and required inputs are given
+  if request.method == 'POST' and form.validate():
+
+    # Add game to appropriate collection
+    if not(form.open_source.data):
+        db['FreeGames'].insert_one({
+          'name': form.name.data,
+          'img_name': form.img_name.data,
+          'url': form.url.data,
+          'embed_link': form.embed_link.data,
+          'date_added': datetime.utcnow()
+        })
+    else:
+       db['OpenSourceGames'].insert_one({
+          'name': form.name.data,
+          'img_name': form.img_name.data,
+          'url': form.url.data,
+          'embed_link': form.embed_link.data,
+          'date_added': datetime.utcnow()
+       })
+
+    # Create new entry
+    return redirect('add')
+
+  # Render empty form
+  elif request.method == 'GET':
+    return render_template('add.html', form=form)
+
+
 @app.route('/OpenSourceGames/<game_name>')
 def play_game(game_name):
 
