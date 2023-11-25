@@ -344,6 +344,7 @@ updateHighScoreList = function () {
                                     ' by ' + highScore.name;  
          highScoreList.appendChild(el);
       }
+      //Fetches highscores from the array saved above, conole.log(result) can be used for debugging
       fetch('/HighScores', { 
          method: 'POST', 
          headers: {
@@ -353,7 +354,7 @@ updateHighScoreList = function () {
       })
       .then(response => response.text())
       .then(result => {
-         console.log(result);
+         //console.log(result);
       })
       .catch(error => {
          console.error('Error: ', error);
