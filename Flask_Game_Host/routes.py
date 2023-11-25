@@ -34,6 +34,11 @@ def homepage():
     game_grid = fill_grid()
     return render_template('homepage.html', grid_display=game_grid)
 
+@app.route('/HighScores', methods=['POST'])
+def highscores():
+    highScores = request.json['highScores']
+    result = highScores
+    return jsonify({'result' : result})
 
 @app.route('/about')
 def about():
@@ -123,18 +128,3 @@ def play_game(game_name):
         return render_template(f'{game_name}.html')
     else:
         return 'Game not found', 404
-
-
-#@app.route('/save_high_scores', methods=['POST'])
-#def save_high_scores():
-    #score = request.form['score']
-    #name = request.form['name']
-
-    # Format the high score
-   # high_score = f'{score} by {name}\n'
-
-    # Save the high score to a text file
-   # with open('high_scores.txt', 'a') as file:
-     #   file.write(high_score)
-
-   # return redirect('/')

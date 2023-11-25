@@ -157,7 +157,6 @@ var game = new Game('pinball', 'gameCanvas'),
    },
 
    ballSprite = new Sprite('ball',
-                     new ImagePainter('/img/ball.png'),
                      new ImagePainter('img/ball.png'),
                      [ ballMover ]),
 
@@ -345,22 +344,27 @@ updateHighScoreList = function () {
                                     ' by ' + highScore.name;  
          highScoreList.appendChild(el);
       }
-      //saveHighScoresToFile(highScores);
+      fetch('/HighScores', { 
+         method: 'POST', 
+         headers: {
+            'Content-Type' : 'application/json'
+         },
+         body: JSON.stringify({highScores:highScores})
+      })
+      .then(response => response.text())
+      .then(result => {
+         console.log(result);
+      })
+      .catch(error => {
+         console.error('Error: ', error);
+      });
+
    }
    else {
       previousHighScoresTitle.style.display = 'none';
    }
 }
-function saveHighScoresToFile(highScores) {
-   //var scoreString = highScores.map(function(score) {
-   //   return score.score + ' by ' + score.name;
-  // }).join('\n');
 
-   //var textArea = document.createElement('textarea');
-   //textArea.value = scoreString;
-   //document.body.appendChild(textArea);
-
-}
 
 // The browser invokes this method when the user clicks on the
 // Add My Score button.
@@ -666,13 +670,13 @@ function showTryAgainImage() {
 
    game.context.clip();
 
-   game.context.drawImage(game.getImage('/img/tryAgain.png'), 0,
+   game.context.drawImage(game.getImage('img/tryAgain.png'), 0,
                           game.context.canvas.height-200);
    game.context.restore();
 };
 
 function drawExtraBall(index) {
-   game.context.drawImage(game.getImage('/img/ball.png'),
+   game.context.drawImage(game.getImage('img/ball.png'),
       EXTRA_BALLS_RIGHT - EXTRA_BALL_WIDTH*index,
                           EXTRA_BALLS_BOTTOM);
 };
