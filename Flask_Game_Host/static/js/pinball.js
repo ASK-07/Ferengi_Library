@@ -85,7 +85,6 @@ var game = new Game('pinball', 'gameCanvas'),
    ACTUATOR_PLATFORM_HEIGHT = 10,
 
    actuatorSprite = new Sprite('actuator',
-                     new ImagePainter('/img/actuator-0.png')),
                      new ImagePainter('img/actuator-0.png')),
 
    // Ball.......................................................
@@ -668,14 +667,12 @@ function showTryAgainImage() {
    game.context.clip();
 
    game.context.drawImage(game.getImage('/img/tryAgain.png'), 0,
-   game.context.drawImage(game.getImage('img/tryAgain.png'), 0,
                           game.context.canvas.height-200);
    game.context.restore();
 };
 
 function drawExtraBall(index) {
    game.context.drawImage(game.getImage('/img/ball.png'),
-   game.context.drawImage(game.getImage('img/ball.png'),
       EXTRA_BALLS_RIGHT - EXTRA_BALL_WIDTH*index,
                           EXTRA_BALLS_BOTTOM);
 };

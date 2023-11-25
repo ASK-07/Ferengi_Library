@@ -16,7 +16,11 @@ gameDict = {
                         'Classic pinball',
                         'https://github.com/corehtml5canvas/code/tree/master/ch09/pinball'
                         ],
-
+            '2048' : ['2048',
+                      '2048.png',
+                      'Classic 2048',
+                      'https://github.com/gabrielecirulli/2048'
+	                 ],
             'test_game_0': ['test_title_0',
                             'gex.png',
                             'test_description_0',
