@@ -344,7 +344,7 @@ updateHighScoreList = function () {
                                     ' by ' + highScore.name;  
          highScoreList.appendChild(el);
       }
-      fetch('/highscores', { 
+      fetch('/HighScores', { 
          method: 'POST', 
          headers: {
             'Content-Type' : 'application/json'
