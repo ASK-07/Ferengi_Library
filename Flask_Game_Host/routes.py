@@ -41,7 +41,7 @@ def homepage():
 def highscores():
     highScores = request.json['highScores']
     result = highScores
-    mongo.db.Highscores.insert_many(result)
+    db['Highscores'].insert_many(result)
     return jsonify({'result' : result})
 
 @app.route('/about')
