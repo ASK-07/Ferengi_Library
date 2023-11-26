@@ -1,0 +1,46 @@
+{% block content %}
+
+    {% for message in form.name.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.open_source.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.url.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in form.embed_link.errors %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    <form action="{{ url_for('add') }}" method=post>
+
+        {{ form.csrf_token }}
+
+        {{ form.name.label }}
+        {{ form.name }}
+        <br>
+
+        {{ form.open_source.label }}
+        {{ form.open_source }}
+        <br>
+
+        {{ form.img_name.label }}
+        {{ form.img_name }}
+        <br>
+
+        {{ form.url.label }}
+        {{ form.url }}
+        <br>
+
+        {{ form.embed_link.label }}
+        {{ form.embed_link }}
+        <br>
+
+        {{ form.submit }}
+    </form>
+
+{% endblock %}
