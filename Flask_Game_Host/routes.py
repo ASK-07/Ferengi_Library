@@ -97,7 +97,7 @@ def play_bowling():
 def play_archery():
     return render_template('archery.html')
 
-
+#added to help aid in pulling from database by names
 @app.route('/get_player_data', methods=['GET'])
 def get_player_data():
     if request.method == 'GET':
@@ -118,7 +118,7 @@ def get_player_data():
             print("Player not found")
             return jsonify({'error': 'Player not found'}), 404
 
-
+#added to help aid in pulling top 5 scores from database
 @app.route('/get_top_5_scores', methods=['GET'])
 def get_top_5_scores():
     if request.method == 'GET':
