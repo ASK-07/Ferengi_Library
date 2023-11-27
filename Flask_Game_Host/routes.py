@@ -67,9 +67,9 @@ def play_billard():
     return render_template('billiard.html')
 
 
-@app.route('/multi-square')
-def play_multi_square():
-    return render_template('multiSquare.html')
+@app.route('/daily-sudoku')
+def play_sudoku():
+    return render_template('dailySudoku.html')
 
 @app.route('/chess')
 def play_chess():
