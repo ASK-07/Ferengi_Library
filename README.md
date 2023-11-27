@@ -129,3 +129,31 @@ List of ready features here:
 - **Jake**
 
 - **Jaime**: "Import another game into our flask app and work in keeping track of scores in the backend or continue to update our front-end."
+
+## Sprint 3
+>UPDATE: We have added multiple new games to our library, fixed some styling, added a database that records highscores and the games, and added a new way to dynamically add "Open Source Games"
+
+## Contributions
+- **Alex**: 
+        
+- **Nathan**: "Deployed a new game to replace chess from last sprint to resolve issues, added code inorder to collect scores from both pinball and 2048, added code to write those scores to the database"
+    - `Jira Task (SCRUM-87): Deploy new game to replace chess`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-87?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+    - `Jira Task (SCRUM-89): Bug fix current image problems`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-89?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+    - `Jira Task (SCRUM-90): Fix styling issues`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-90?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+    - `Jira Task (SCRUM-83): Implement backend scorekeeping for pinball`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-83?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+    - `Jira Task (SCRUM-86): Connect backend scorekeeping for pinball to database`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-86?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+    - `Jira Task (SCRUM-112): Connected backend scorekeeping for 2048 to the database(DO NOT MERGE  THIS DUE TO CONFLICTS)`
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/issues/SCRUM-112?jql=project%20%3D%20%22SCRUM%22%20and%20assignee%20%3D%20currentUser%28%29%20ORDER%20BY%20created%20DESC
+        - The conflicts were later fixed and the code was added into the dev3 branch
+- **Heath**:
+
+- **Jake**
+
+- **Jaime**: 
+
+
