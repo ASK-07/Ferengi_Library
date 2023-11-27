@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+<!-- Needs styling using html, css -->
+{% block content %}
+
+<!-- Display game name -->
+{{ game.name }}
+<br>
+
+<!-- Embed game using iframe -->
+<iframe src="{{ game.embed_link }}" width="100%" height="700"></iframe>
+<br>
+
+<!-- Link to repository -->
+<a href="{{ game.url }}" target="_blank">Check out the source code on GitHub!</a>
+<br>
+
+{% endblock %}

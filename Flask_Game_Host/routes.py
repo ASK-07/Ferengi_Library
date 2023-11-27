@@ -1,6 +1,6 @@
 from Flask_Game_Host import app
 from flask import redirect, render_template
-from Flask_Game_Host.html_generator import fill_grid
+from Flask_Game_Host.html_generator import fill_grid, fill_grid_from_db
 from Flask_Game_Host.player import Player
 from Flask_Game_Host.game import Game
 from Flask_Game_Host.forms import GameForm
@@ -129,6 +129,24 @@ def get_player_data():
             return jsonify({'error': 'Player not found'}), 404
 
 
+@app.route('/OpenSourceGames/<name>', methods=['GET']) 
+def get_one_os_game(name): 
+ 
+    # Find document in collection by its 'name' field 
+    game_doc = mongo.db.OpenSourceGames.find_one({'name': name}) 
+ 
+    # Create a dictionary from the queried document 
+    game_dict = { 
+        'name': game_doc['name'], 
+        'img_name': game_doc['img_name'], 
+        'url': game_doc['url'], 
+        'embed_link': game_doc['embed_link'], 
+        'date_added': game_doc['date_added'] 
+        } 
+ 
+    # Render html template file with queried game 
+    return render_template('open-source-game.html', game=game_dict)
+
 @app.route('/get_top_5_scores', methods=['GET'])
 def get_top_5_scores():
     if request.method == 'GET':
@@ -188,11 +206,31 @@ def add():
   elif request.method == 'GET':
     return render_template('add.html', form=form)
 
-
-@app.route('/OpenSourceGames/<game_name>')
-def play_game(game_name):
-
-    if game_name:
-        return render_template(f'{game_name}.html')
-    else:
-        return 'Game not found', 404
+@app.route('/OpenSourceGames/page/<int:page>', methods=['GET']) 
+def get_all_os_games(page): 
+ 
+    # Set number of games to display per page 
+    per_page = 9 
+ 
+    # Get the number of games in collection 
+    total_games = mongo.db.OpenSourceGames.count_documents({}) 
+ 
+    # Get the game documents to display based on page 
+    cursor = mongo.db.OpenSourceGames.find().skip((page - 1) * per_page).limit(per_page) 
+ 
+    # Create a dictionary of the queried games 
+    games_dict = { 
+        doc['name']: { 
+            'name': doc['name'], 
+            'img_name': doc['img_name'], 
+            'url': doc['url'], 
+            'embed_link': doc['embed_link'], 
+            'date_added': doc['date_added'] 
+        } 
+        for doc in cursor 
+    } 
+ 
+    # Generate html string to create grid for the page 
+    game_grid = fill_grid_from_db(games_dict) 
+ 
+    return render_template('open-source-games.html', game_grid=game_grid, page=page, per_page=per_page, total_games=total_games)

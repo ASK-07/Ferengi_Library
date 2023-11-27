@@ -7,7 +7,7 @@ app = Flask(__name__, static_url_path='', static_folder='static', template_folde
 
 # Put key in .env/ sys env var
 load_dotenv() 
-app.config["MONGO_URI"] = 'mongodb+srv://Heath:VsaClEbzM7VkaUuQ@dev-aws-website.ppvg8ly.mongodb.net/Games?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = os.getenv("MONGO_URI") 
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY') 
 
 mongo.init_app(app)

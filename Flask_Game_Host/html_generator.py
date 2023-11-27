@@ -32,3 +32,31 @@ def fill_grid():
         game_cells += game_description + '</div>'                           # Add description, close div
     
     return game_cells
+
+
+def fill_grid_from_db(games_dict):
+
+    # Initialize empty return string
+    game_cells = ''
+
+    # Build each cell of grid using dictionary parameter
+    for game in games_dict.keys():
+
+        # Fetch relevant info for grid
+        game_title = games_dict[game]['name']
+        game_image = games_dict[game]['img_name']
+
+        # Create string for opening anchor to game's page
+        game_anchor = f'<a href="/OpenSourceGames/{game_title}">'
+
+        # Create string for loading current game's image
+        image_string = f'<img src="img/{game_image}" alt="{game_image}"/>'
+
+        # Turn current game into game-cell div
+        game_cells += (
+            '<div class="game-cell">'                               # Open game-cell
+            f'{game_anchor}{image_string}</a><br>'                  # Anchor image
+            f'{game_anchor}<u>{game_title}</u></a><br></div>'       # Anchor title, close game-cell
+        )
+
+    return game_cells
