@@ -62,10 +62,9 @@ def play_pinball():
     return render_template('pinball.html')
 
 
-@app.route('/billiard')
-def play_billard():
-    return render_template('billiard.html')
-
+@app.route('/1010-classic')
+def play_1010():
+    return render_template('1010.html')
 
 @app.route('/daily-sudoku')
 def play_sudoku():
@@ -75,9 +74,9 @@ def play_sudoku():
 def play_chess():
     return render_template('chess.html')
 
-@app.route('/cannon-balls-3d')
-def play_cannon_3D():
-    return render_template('cannon3d.html')
+@app.route('/coloring-mandalas')
+def play_coloring_mandalas():
+    return render_template('coloringMandalas.html')
 
 @app.route('/checkers')
 def play_checkers():

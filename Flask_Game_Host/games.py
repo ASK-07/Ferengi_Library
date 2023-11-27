@@ -23,26 +23,26 @@ gameDict = {
 	                 ],
             'chess': ['Chess',
                             'Chess.jpg',
-                            'Chess Classic',
-                            'https://play.famobi.com/chess-classic'
+                            'Chess',
+                            'https://cdn.htmlgames.com/Chess/'
                             ],
 
-            'multi-square': ['Multi-Square',
-                            'Multisquare.jpg',
-                            'Multi-Square',
-                            'https://play.famobi.com/multisquare'
+            'daily-sudoku': ['Daily-Sudoku',
+                            'dailysudoku.jpg',
+                            'Daily Sudoku',
+                            'https://cdn.htmlgames.com/DailySudoku/'
                             ],
 
-            'billiard': ['Billiard',
-                            '8BallBilliards.jpg',
-                            '8-Ball-Billiard',
-                            'https://play.famobi.com/8-ball-billiards-classic'
+            '1010-classic': ['1010-Classic',
+                            '1010classic.jpg',
+                            '1010 Classic',
+                            'https://cdn.htmlgames.com/1010Classic/'
                             ],
 
-            'cannon-balls-3d': ['Cannon-Balls-3D',
-                            'CannonBalls3d.jpg',
-                            'Cannon-Balls-3D',
-                            'https://play.famobi.com/cannon-balls-3d'
+            'coloring-mandalas': ['Coloring-Mandalas',
+                            'coloring-mandalas.jpg',
+                            'Coloring Mandalas',
+                            'https://cdn.htmlgames.com/ColoringMandalas/'
                             ],
 
             'archery-tour': ['Archery',
@@ -52,9 +52,9 @@ gameDict = {
                             ],
 
             'bowling': ['Bowling',
-                            'ClassicBowling.jpg',
-                            'Classic Bowling',
-                            ' https://play.famobi.com/classic-bowling'
+                            'bowling.jpg',
+                            'Bowling',
+                            'https://cdn.htmlgames.com/Bowling/'
                             ],
             
             'table-tennis': ['Table-Tennis',
@@ -65,8 +65,8 @@ gameDict = {
 
             'checkers': ['Checkers',
                             'CheckersClassic.jpg',
-                            'Checkers Classic',
-                            'https://play.famobi.com/checkers-classic'
+                            'Checkers',
+                            'https://cdn.htmlgames.com/Checkers/'
                             ],
 
             'mahjongg': ['Mahjongg',
