@@ -45,10 +45,10 @@ gameDict = {
                             'https://cdn.htmlgames.com/ColoringMandalas/'
                             ],
 
-            'archery-tour': ['Archery',
-                            'ArcheryWorldTour.jpg',
-                            'Archery World Tour',
-                            'https://play.famobi.com/archery-world-tour'
+            'alien-invaders2': ['Alien-Invaders2',
+                            'alieninvaders2.jpg',
+                            'Alien Invaders 2',
+                            'https://cdn.htmlgames.com/AlienInvaders2/'
                             ],
 
             'bowling': ['Bowling',
@@ -57,10 +57,10 @@ gameDict = {
                             'https://cdn.htmlgames.com/Bowling/'
                             ],
             
-            'table-tennis': ['Table-Tennis',
-                            'TableTennis.jpg',
-                            'Table Tennis World Tour',
-                            'https://play.famobi.com/table-tennis-world-tour'
+            'classic-solitaire': ['Classic-Solitaire',
+                            'classicsolitaire.jpg',
+                            'Classic Solitaire',
+                            'https://cdn.htmlgames.com/ClassicSolitaire/'
                             ],
 
             'checkers': ['Checkers',

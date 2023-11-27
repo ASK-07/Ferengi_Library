@@ -82,17 +82,17 @@ def play_coloring_mandalas():
 def play_checkers():
     return render_template('checkers.html')
 
-@app.route('/table-tennis')
-def play_tennis():
-    return render_template('tableTennis.html')
+@app.route('/classic-solitaire')
+def play_solitaire():
+    return render_template('classicSolitaire.html')
 
 @app.route('/bowling')
 def play_bowling():
     return render_template('bowling.html')
 
-@app.route('/archery-tour')
-def play_archery():
-    return render_template('archery.html')
+@app.route('/alien-invaders2')
+def play_alien_invaders2():
+    return render_template('alienInvaders2.html')
 
 @app.route('/mahjongg')
 def play_mahjongg():
