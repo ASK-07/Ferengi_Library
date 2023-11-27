@@ -74,38 +74,45 @@ def play_pinball():
     return render_template('pinball.html')
 
 
-@app.route('/billiard')
-def play_billard():
-    return render_template('billiard.html')
+@app.route('/1010-classic')
+def play_1010():
+    return render_template('1010.html')
 
-
-@app.route('/multi-square')
-def play_multi_square():
-    return render_template('multiSquare.html')
+@app.route('/daily-sudoku')
+def play_sudoku():
+    return render_template('dailySudoku.html')
 
 @app.route('/chess')
 def play_chess():
     return render_template('chess.html')
 
-@app.route('/cannon-balls-3d')
-def play_cannon_3D():
-    return render_template('cannon3d.html')
+@app.route('/coloring-mandalas')
+def play_coloring_mandalas():
+    return render_template('coloringMandalas.html')
 
 @app.route('/checkers')
 def play_checkers():
     return render_template('checkers.html')
 
-@app.route('/table-tennis')
-def play_tennis():
-    return render_template('tableTennis.html')
+@app.route('/classic-solitaire')
+def play_solitaire():
+    return render_template('classicSolitaire.html')
 
 @app.route('/bowling')
 def play_bowling():
     return render_template('bowling.html')
 
-@app.route('/archery-tour')
-def play_archery():
-    return render_template('archery.html')
+@app.route('/alien-invaders2')
+def play_alien_invaders2():
+    return render_template('alienInvaders2.html')
+
+@app.route('/mahjongg')
+def play_mahjongg():
+    return render_template('mahjongg.html')
+
+@app.route('/ninja-darts')
+def play_ninja_darts():
+    return render_template('ninjaDarts.html')
 
 #added to help aid in pulling from database by names
 @app.route('/get_player_data', methods=['GET'])
