@@ -95,6 +95,14 @@ def play_bowling():
 def play_archery():
     return render_template('archery.html')
 
+@app.route('/mahjongg')
+def play_mahjongg():
+    return render_template('mahjongg.html')
+
+@app.route('/ninja-darts')
+def play_ninja_darts():
+    return render_template('ninjaDarts.html')
+
 
 @app.route('/get_player_data', methods=['GET'])
 def get_player_data():

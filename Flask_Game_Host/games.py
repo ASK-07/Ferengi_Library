@@ -67,5 +67,17 @@ gameDict = {
                             'CheckersClassic.jpg',
                             'Checkers Classic',
                             'https://play.famobi.com/checkers-classic'
+                            ],
+
+            'mahjongg': ['Mahjongg',
+                            'mahjongg.jpg',
+                            'Mahjongg',
+                            'https://cdn.htmlgames.com/Mahjongg/'
+                            ],
+
+            'ninja-darts': ['Ninja-Darts',
+                            'ninjadarts.jpg',
+                            'Ninja Darts',
+                            'https://cdn.htmlgames.com/NinjaDarts/'
                             ]
             }
