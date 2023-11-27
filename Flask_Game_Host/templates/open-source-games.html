@@ -2,37 +2,38 @@
 {% block content %}
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <style>
-      
-      /* Better visualize div.game-grid by assigning background color */
-      .game-grid {
-        display: grid;
-        gap: 10px 10px;
-        grid-template-columns: auto auto auto; 
-      }
+        /* Better visualize div.game-grid by assigning background color */
+        .game-grid {
+            display: grid;
+            gap: 10px 10px;
+            grid-template-columns: auto auto auto;
+        }
 
-      .game-cell {
-        color: rgb(255, 255, 255);
-        padding: 20px;
-        text-align: center;
-      }
-
+        .game-cell {
+            color: rgb(255, 255, 255);
+            padding: 20px;
+            text-align: center;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div class="game-grid">
-      {{ game_grid|safe }}
+        {{ game_grid|safe }}
     </div>
 
-  </body>
+</body>
+
 </html>
 
 <div class="pagination">
     {% for p in range(1, (total_games // per_page) + 2) %}
-      <a href="{{ url_for('get_all_os_games', page=p) }}">{{ p }}</a>
+    <a href="{{ url_for('get_all_os_games', page=p) }}">{{ p }}</a>
     {% endfor %}
 </div>
-  
+
 {% endblock %}
