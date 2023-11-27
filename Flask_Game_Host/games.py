@@ -11,16 +11,6 @@ Each key '<game>' is the same as its route string and stores:
 '''
 gameDict = {
 
-            'pinball': ['Pinball',
-                        'pinball.png',
-                        'Classic pinball',
-                        'https://github.com/corehtml5canvas/code/tree/master/ch09/pinball'
-                        ],
-            '2048' : ['2048',
-                      '2048.png',
-                      'Classic 2048',
-                      'https://github.com/gabrielecirulli/2048'
-	                 ],
             'chess': ['Chess',
                             'Chess.jpg',
                             'Chess Classic',
