@@ -43,11 +43,12 @@ def fill_grid_from_db(games_dict):
     for game in games_dict.keys():
 
         # Fetch relevant info for grid
-        game_title = games_dict[game]['name']
+        flask_url = games_dict[game]['name']
+        display_name = games_dict[game]['display_name']
         game_image = games_dict[game]['img_name']
 
         # Create string for opening anchor to game's page
-        game_anchor = f'<a href="/OpenSourceGames/{game_title}">'
+        game_anchor = f'<a href="/OpenSourceGames/{flask_url}">'
 
         # Create string for loading current game's image
         image_string = f'<img src="img/{game_image}" alt="{game_image}"/>'
@@ -56,7 +57,7 @@ def fill_grid_from_db(games_dict):
         game_cells += (
             '<div class="game-cell">'                               # Open game-cell
             f'{game_anchor}{image_string}</a><br>'                  # Anchor image
-            f'{game_anchor}<u>{game_title}</u></a><br></div>'       # Anchor title, close game-cell
+            f'{game_anchor}<u>{display_name}</u></a><br></div>'       # Anchor title, close game-cell
         )
 
     return game_cells

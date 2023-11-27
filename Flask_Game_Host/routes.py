@@ -1,5 +1,5 @@
-from Flask_Game_Host import app, db
-from flask import redirect, render_template
+from Flask_Game_Host import app
+from flask import redirect, render_template, url_for
 from Flask_Game_Host.html_generator import fill_grid, fill_grid_from_db
 from Flask_Game_Host.player import Player
 from Flask_Game_Host.game import Game
@@ -97,6 +97,7 @@ def play_bowling():
 def play_archery():
     return render_template('archery.html')
 
+
 #added to help aid in pulling from database by names
 @app.route('/get_player_data', methods=['GET'])
 def get_player_data():
@@ -117,6 +118,8 @@ def get_player_data():
         else:
             print("Player not found")
             return jsonify({'error': 'Player not found'}), 404
+
+
 
 #added to help aid in pulling top 5 scores from database
 @app.route('/get_top_5_scores', methods=['GET'])
@@ -143,6 +146,8 @@ def get_top_5_scores():
             print("No scores found")
             return jsonify({'error': 'No scores found'}), 404
         
+
+
 # DEV endpoint, should not be shipped with production
 @app.route('/add', methods=['GET', 'POST'])
 def add():
@@ -155,16 +160,18 @@ def add():
 
     # Add game to appropriate collection
     if not(form.open_source.data):
-        db['FreeGames'].insert_one({
+        mongo.db.FreeGames.insert_one({
           'name': form.name.data,
+          'display_name': form.display_name.data,
           'img_name': form.img_name.data,
           'url': form.url.data,
           'embed_link': form.embed_link.data,
           'date_added': datetime.utcnow()
         })
     else:
-       db['OpenSourceGames'].insert_one({
+       mongo.db.OpenSourceGames.insert_one({
           'name': form.name.data,
+          'display_name': form.display_name.data,
           'img_name': form.img_name.data,
           'url': form.url.data,
           'embed_link': form.embed_link.data,
@@ -185,14 +192,15 @@ def add():
 def get_one_os_game(name):
 
     # Specify collection to query
-    OpenSourceGames = db['OpenSourceGames']
+    # OpenSourceGames = db['OpenSourceGames']
 
     # Find document in collection by its 'name' field
-    game_doc = OpenSourceGames.find_one({'name': name})
+    game_doc = mongo.db.OpenSourceGames.find_one({'name': name})
 
     # Create a dictionary from the queried document
     game_dict = {
         'name': game_doc['name'],
+        'display_name': game_doc['display_name'],
         'img_name': game_doc['img_name'],
         'url': game_doc['url'],
         'embed_link': game_doc['embed_link'],
@@ -203,6 +211,12 @@ def get_one_os_game(name):
     return render_template('open-source-game.html', game=game_dict)
 
 
+# Simplified route that redirects to page one of open source games
+@app.route('/OpenSourceGames', methods=['GET'])
+def open_source_games():
+    return redirect(url_for('get_all_os_games', page=1))
+
+
 @app.route('/OpenSourceGames/page/<int:page>', methods=['GET'])
 def get_all_os_games(page):
 
@@ -210,18 +224,19 @@ def get_all_os_games(page):
     per_page = 9
 
     # Specify collection to query
-    OpenSourceGames = db['OpenSourceGames']
+    # OpenSourceGames = db['OpenSourceGames']
 
     # Get the number of games in collection
-    total_games = OpenSourceGames.count_documents({})
+    total_games = mongo.db.OpenSourceGames.count_documents({})
 
     # Get the game documents to display based on page
-    cursor = OpenSourceGames.find().skip((page - 1) * per_page).limit(per_page)
+    cursor = mongo.db.OpenSourceGames.find().skip((page - 1) * per_page).limit(per_page)
 
     # Create a dictionary of the queried games
     games_dict = {
         doc['name']: {
             'name': doc['name'],
+            'display_name': doc['display_name'],
             'img_name': doc['img_name'],
             'url': doc['url'],
             'embed_link': doc['embed_link'],
