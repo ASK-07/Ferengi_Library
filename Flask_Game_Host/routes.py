@@ -1,4 +1,4 @@
-from Flask_Game_Host import app, db
+from Flask_Game_Host import app
 from flask import redirect, render_template
 from Flask_Game_Host.html_generator import fill_grid
 from Flask_Game_Host.player import Player
@@ -41,8 +41,18 @@ def homepage():
 def highscores():
     highScores = request.json['highScores']
     result = highScores
-    db['Highscores'].insert_many(result)
+    mongo.db.Highscores.insert_many(result)
     return jsonify({'result' : result})
+
+
+#Fetches best scores from local_storage_manager.js and adds them to the database
+@app.route('/BestScores', methods=['POST'])
+def handle_best_scores():
+        data = request.get_json()
+        new_score = data.get('newScore')
+
+        mongo.db.Bestscores.insert_one(new_score)
+
 
 @app.route('/about')
 def about():
@@ -155,7 +165,7 @@ def add():
 
     # Add game to appropriate collection
     if not(form.open_source.data):
-        db['FreeGames'].insert_one({
+        mongo.db.FreeGames.insert_one({
           'name': form.name.data,
           'img_name': form.img_name.data,
           'url': form.url.data,
@@ -163,7 +173,7 @@ def add():
           'date_added': datetime.utcnow()
         })
     else:
-       db['OpenSourceGames'].insert_one({
+       mongo.db.OpenSourceGames.insert_one({
           'name': form.name.data,
           'img_name': form.img_name.data,
           'url': form.url.data,
