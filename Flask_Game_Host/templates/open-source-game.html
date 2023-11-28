@@ -4,7 +4,7 @@
 {% block content %}
 
     <!-- Display game name -->
-    {{ game.display_name }}
+    <h2 style="margin-top: 50px;">{{ game.display_name }} </h2>
     <br>
 
     <!-- Embed game using iframe -->
@@ -12,7 +12,9 @@
     <br>
 
 <!-- Link to repository -->
+<p class="about-lib">
 <a href="{{ game.url }}" target="_blank">Check out the source code on GitHub!</a>
+</p>
 <br>
 
 {% endblock %}

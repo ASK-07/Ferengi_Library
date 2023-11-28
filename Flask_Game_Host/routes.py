@@ -10,24 +10,11 @@ from flask import jsonify, request, Blueprint
 from .mongo_config import mongo
 from datetime import datetime
 
-#temporary list of scores
-top_players = [Player("Sam", 500), Player("Jeff", 2), Player("Sally", 1000), Player("Ryan", 50), Player("Lindsay", 750)]
-#temporary list of game titles to use for scoreboard
-game_titles = [Game("Chess"), Game("Pinball")]
-#calling class method to sort scores
-top_players = Player.sort_players(top_players)
 
 
 routes_app = Blueprint('routes', __name__)
 
-def build_leaderboard_html():
-  html_string = "<table class=\"leaderboard\"><caption><h4>" 
-  html_string += game_titles[0].title + " Scoreboard</h4></caption><tr><th>Username</th><th>Score</th></tr>"
-  for obj in top_players:
-    html_string += "<tr><td>" + obj.username + "</td>"
-    html_string += "<td>" + str(obj.score) + "</td></tr>"
-  html_string += "</table>"
-  return html_string
+
 
 
 
@@ -86,7 +73,21 @@ def about():
 
 @app.route('/2048')
 def play_2048():
-   return render_template('2048.html')
+    # Call the function to get the top 10 scores
+    response = get_2048_scores()
+
+    # Check if the response is successful
+    if response:
+        # Extract the JSON data from the response
+        top_10_scores = response.json.get('top_10_scores', [])
+
+        # Format the scores into an HTML table
+        leaderboard_html = "<table border='1'><tr><th>Score</th></tr>"
+        for score in top_10_scores:
+            leaderboard_html += f"<tr><td>{score}</td></tr>"
+        leaderboard_html += "</table>" 
+
+        return render_template('2048.html', leaderboard_2048=leaderboard_html)
 
 
 @app.route('/test/<string:tester>')
@@ -96,7 +97,20 @@ def test_get(tester):
 
 @app.route('/pinball')
 def play_pinball():
-    return render_template('pinball.html')
+    # Call the function to get the top 5 scores (thanks nathan)
+    top_5_scores = get_top_5_scores()
+
+    # Format the scores into an HTML table
+    leaderboard_html = "<table border='1'><tr><th>Name</th><th>Score</th></tr>"
+    for player_data in top_5_scores:
+        # Check if 'name' is present in the player_data dictionary
+        name = player_data.get('name', 'Unknown')
+        score = player_data.get('score', 'Unknown')
+
+        leaderboard_html += f"<tr><td>{name}</td><td>{score}</td></tr>"
+    leaderboard_html += "</table>"
+
+    return render_template('pinball.html', leaderboard_pinball=leaderboard_html)
 
 
 @app.route('/1010-classic')
@@ -167,26 +181,39 @@ def get_player_data():
 def get_top_5_scores():
     if request.method == 'GET':
         # Sort by score in descending order and limit to 5
-        top_5_scores = mongo.db.HostedGames.find(
+        top_5_scores = mongo.db.Highscores.find(
             filter={},
             sort=[('score', -1)],
             projection={'_id': False},
             limit=5
         )
 
-        if top_5_scores:
-            # Print top 5 scores to the terminal
-            print("Top 5 Scores:")
-            for player_data in top_5_scores:
-                for key, value in player_data.items():
-                    print(f"{key}: {value}")
-                print("---")
+        top_5_scores_list = list(top_5_scores)
 
-            return jsonify({'top_5_scores': list(top_5_scores)})
+        if top_5_scores_list:
+            # Return the top 5 scores as a list
+            return top_5_scores_list
         else:
-            print("No scores found")
-            return jsonify({'error': 'No scores found'}), 404
+            return []
         
+@app.route('/get_2048_scores', methods=['GET'])
+def get_2048_scores():
+    if request.method == 'GET':
+        # Retrieve scores from MongoDB
+        scores_from_db = mongo.db.Bestscores.find(
+            filter={},
+            projection={'_id': False}
+        )
+
+        # Convert scores to numeric types and filter out non-numeric values
+        numeric_scores = [float(score.get('score', 0)) for score in scores_from_db if score.get('score').isdigit()]
+
+        # Sort numeric scores in descending order and limit to 10
+        top_10_scores = sorted(numeric_scores, reverse=True)[:10]
+
+        # Return the top 10 scores as a JSON response
+        return jsonify({'top_10_scores': top_10_scores})
+
 
 # -----------------------DO NOT DELETE-----------------------
 # DEV endpoint, should not be shipped with production
