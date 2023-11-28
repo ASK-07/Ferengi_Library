@@ -53,9 +53,19 @@ header h1.logo:hover {
   border-radius: 10px;
 }
 
+.homepage-container1
+{
+  width: 1000px;
+  margin: 0 auto;
+  margin-left: -20px;
+  padding: 20px;
+  background-color: #1c1e22;
+  border-radius: 10px;
+}
+
 #leaderboard_container {
   position: fixed;
-  top: 75px;
+  top: 420px;
   right: 20px;
   background: #191f19; 
   padding: 10px;
@@ -101,6 +111,8 @@ th{
   border: 1px solid #484646fe;
   border-collapse: collapse;
   padding: 12px 15px;
+  color: #fff;  /* Text color for header cells */
+  font-size: 1.2em;  /* Font size for header cells */
 }
 tr:nth-child(even) {
   background-color: #312e2e;
@@ -109,6 +121,8 @@ td {
   border: 1px solid #484646fe;
   border-collapse: collapse;
   padding: 12px 15px;
+  color: #fff1f3;  /* Text color for regular cells */
+  font-size: 1.2em;  /* Font size for regular cells */
 }
 
 h2 {
@@ -171,7 +185,7 @@ h3 {
 
 .photo-box img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: cover;
   border-radius: 10px;
 }

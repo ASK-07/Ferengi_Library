@@ -35,7 +35,7 @@
   <body>
 
     <!-- Hard code 1x2 grid of hosted games -->
-    <p>Hosted Games</p>
+    <h2 style="margin-top: 50px;">Hosted Games</h2>
     <div class="hosted-game-grid">
       <div class="game-cell">
         <a href="/pinball"><img src="img/pinball.png" alt="pinball.png"/></a><br>
@@ -48,13 +48,13 @@
     </div>
 
     <!-- Display 1x5 grid of random os games -->
-    <p>Open Source Games</p>
+    <h2 style="margin-top: 50px;">Open Source Games</h2>
     <div class="os-game-grid">
       {{ os_grid|safe }}
     </div>
 
     <!-- Display 9x9 grid of free games -->
-    <p>More Games</p>
+    <h2 style="margin-top: 50px;">More Games</h2>
     <div class="free-game-grid">
       {{ grid_display|safe }}
     </div>

@@ -106,6 +106,7 @@
 
    <body>
       <link rel='stylesheet' type='text/css' href="{{url_for('static', filename = 'css/pinball.css')}}"/>
+      <link rel='stylesheet' type='text/css' href="{{url_for('static', filename = 'css/main.css')}}"/>
 
       <audio id='ballRolling' preload='auto'>
          <source src="{{url_for('static', filename = 'sounds/ballRolling.ogg')}}" type='audio/ogg'>
@@ -134,7 +135,10 @@
          <p>Press "space" to launch ball</p>
          <p>80% Browswer zoom is recommended on smaller screen sizes</p>
        </div>
-   
+       <div id="leaderboard_container">
+        <h3>High Scores</h3>
+        {{ leaderboard_pinball|safe }}
+       </div>
       <!-- Game canvas........................................................... -->
       <canvas id='gameCanvas' width='535' height='936'>
          Canvas not supported
