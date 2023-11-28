@@ -23,7 +23,7 @@ routes_app = Blueprint('routes', __name__)
 def homepage():
 
     # Set number of games to retrieve
-    num_games = 5
+    num_games = 4
 
     # Get random games from the collection
     cursor = mongo.db.OpenSourceGames.aggregate([{ '$sample': { 'size': num_games } }])
