@@ -63,3 +63,8 @@ venv/**
 venv/
 
 .project
+
+
+# Deployment connection string, must .gitignore
+deployment.txt
+
