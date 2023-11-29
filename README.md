@@ -135,6 +135,18 @@ List of ready features here:
 
 ## Contributions
 - **Alex**: 
+    - `Jira Task (SCRUM-85): Research: implementations of unique HTML styling`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-85?atlOrigin=eyJpIjoiNWYxZWEzNGMyMTBkNGMwNmJlYzdmN2NjYjFjN2I3MGIiLCJwIjoiaiJ9
+    - `Jira Task (SCRUM-88): Update menu UI`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-88?atlOrigin=eyJpIjoiMmRiYTIzOTk3NzRlNGU0ODgwZTA4YWNkNWU4Njg1YzUiLCJwIjoiaiJ9
+    - `Jira Task (SCRUM-91): Add about us/about our library`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-91?atlOrigin=eyJpIjoiZGQ1OTY2ODYwZjA2NGQ3ZGE5YzY4NDQ5NzNjM2QyNjYiLCJwIjoiaiJ9
+    - `Jira Task (SCRUM-92): Update main.css, style choices for containers, overall background and texts/title`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-92?atlOrigin=eyJpIjoiMmMzZGFhZDNhNjBkNDQ3MTgwODc4YzQxZjliM2ZjZGYiLCJwIjoiaiJ9
+    - `Jira Task (SCRUM-94): Collaborate to get scorekeeping operating correctly for local games via database`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-94?atlOrigin=eyJpIjoiOWM1YzU4MmIyYmQ5NDMxZmE1NjMzNDJiNWQ0ZmE2NWUiLCJwIjoiaiJ9
+    - `Jira Task (SCRUM-111): Block: Reversion of code part three the threequel (added task to address merge complications)`
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-111?atlOrigin=eyJpIjoiNTFhNWY5MDYwNGU0NDU0NWI3MmEyNmYwM2I3ZmUxM2IiLCJwIjoiaiJ9
         
 - **Nathan**: "Deployed a new game to replace chess from last sprint to resolve issues, added code inorder to collect scores from both pinball and 2048, added code to write those scores to the database"
     - `Jira Task (SCRUM-87): Deploy new game to replace chess`
