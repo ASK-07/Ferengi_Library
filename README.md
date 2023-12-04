@@ -56,11 +56,11 @@
 > - About - A page that introduces each team member with their photo, email address, and a short description.
 
 > - Each open source game is displayed using a dynamic route.
->    - Each game's route is defined as: 'OpenSourceGames/gamename'.
->    - Each game's page displays:
->        1. The game's name
->        2. An iframe element that 'embeds' the game, making it playable on the game's page
->        3. A link to the game's repository on Github
+>       - Each game's route is defined as: 'OpenSourceGames/gamename'.
+>       - Each game's page displays:
+>           1. The game's name
+>           2. An iframe element that 'embeds' the game, making it playable on the game's page
+>           3. A link to the game's repository on Github
 > - Each other free games' pages follow a similar layout to the open source games' pages, but without a link to the game's source code.
 > - The two hosted games were modified to track each one's highest obtained scores.
 >     - New high scores are automatically added to the database.
