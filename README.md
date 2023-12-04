@@ -1,7 +1,9 @@
-# Ferengi Physics Engine
-> Alex Kaylor, Jaime Flores, Jake Butler, Nathan Padgett, Heath Mercer, are collaborating
-> to create and implement a simple 2d physics engine.
-<!-- If you have the project hosted somewhere, include the link here. -->
+# Ferengi Game Library
+> Alex Kaylor, Jaime Flores, Jake Butler, Nathan Padgett, Heath Mercer, collaborated
+> to create a flask application where users can play a variety of games in their browser.
+
+> We deployed our flask app, and it can be accessed [here](www.ferengigamelibrary.com).
+> We only own the domain for a limited time, so if it can't be accessed, it likely needs to be renewed.
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -9,50 +11,61 @@
 * [Features](#features)
 <!-- * [License](#license) -->
 
-
 ## General Information
-> OLD:This project is designed for users and developers
-> such as ourselves interested in learning and implementing an engine such as this from the ground up. Our 
-> system will be designed to be intentionally simplified to be accessible to any user and developer to
-> understand comprehensively no matter their education.
->
-> Update: We decided to pivot from our previous idea of creating a 2d physics engine to implementing a flask app that hosts a number of games in our website. Our website will be able to run each game and display the highest scores for the different games that we currently have available.
-![Template Logo](./img/FERENGI-logos.jpeg)
+> We originally sought to create a 2D physics engine, with a small application to demo it.
+> After a semi-successful first sprint, we decided to pivot to a more approachable project.
+
+> The project we pivoted to was a flask application where users could choose from a selection of games to play.
+
+![Template Logo](./img/Ferengi-logos.jpeg)
 
 
 
 ## Technologies Used
-- C++
-- Java
-- Python
-- Flask
-- HTML/CSS
-- Javascript
+> - Python
+> - Javascript
+> - HTML/CSS
+> - Flask
+> - MongoDB
 
 
 ## Features
-List of ready features here:
 
-- GUI - Simple and intuitive user interface, allowing the user to interact with the engine and its objects.
-- Object Drawing - System will draw an object on the plane when recieving input from the user to do so.
-	
-	>relevant user story(s) to above features: 
-    >As a user, I would like to create a window with a 2d plane and a few buttons, that when clicked draw an object.
-    >As a developer I want to generate a set of objects that are either static or dynamic.
-	
+> - Each view extends an HTML template that has routes for 'Open Source Games', 'About', and the homepage.
 
-- Dynamics (simple movement) - System will be able to simulate movement on the objects by recieving user input.
-- Gravity simulated on objects within 2D plane - System will simulate gravity on all objects in the plane.
+> - Homepage - The first page users are introduced to when visiting the site or launching the application.
+>    - Can be accessed from any page by clicking on the 'Ferengi' image (a species from Startrek).
+>    - Three grids are displayed, each with a different variety of games:
+>        1. Hosted Games - A 1x2 grid of games that we integrated into our flask app
+>        2. Open Source Games - A random 1x4 grid of embeddable open-source games
+>        3. Other Free Games - A dynamic grid of embeddable free games
+>        - Each game has an image and name that redirect to their respective pages when clicked.
+>        - Both the open source games grid and the other free games grid are created using a python script that takes in a dictionary and returns an HTML string formatted for our use case.
+>  
 
-	>relevant user story(s): 
-    >As a developer, I would like to implement functions in order to change the gravity and velocities of the simulation, so that I can test different scenarios.
-    >As a user, I would like a user interface within the window to generate forces upon created objects.
-    >As a developer I want to generate a set of objects that are either static or dynamic.
+> - Open Source Games - A page where all embedded open source games that can be played on the site can be accessed.
+>     - Each open source games' information is stored in a remote database. We decided to use MongoDB.
+>     - The route uses a technique called pagination, which helps make our application more scalable.
+>         - Currently, nine games are displayed per page.
+>         - As new game information is included in the database, the open source games page(s) will automatically be updated.
+>         - To navigate to different pages, links at the bottom of the page can be used to specify which page a user would like to visit.
+>             - The links provide a 'First' and 'Last' page, which redirect the user to the first and last page, respectively.
+>             - Between the 'First' and 'Last' links, three numbers are displayed which redirect the user to their respective page.
+>     - The route is dynamic, meaning different pages are accessed using the convention: 'OpenSourceGames/page/pagenumber'.
+>         - The initial route is 'OpenSourceGames/page/1'
+> - About - A page that introduces each team member with their photo, email address, and a short description.
 
-- Plane reset - User will be able to clear the plane of all drawn objects and imposed physics.
+> - Each open source game is displayed using a dynamic route.
+>    - Each game's route is defined as: 'OpenSourceGames/gamename'.
+>    - Each game's page displays:
+>        1. The game's name
+>        2. An iframe element that 'embeds' the game, making it playable on the game's page
+>        3. A link to the game's repository on Github
+> - Each other free games' pages follow a similar layout to the open source games' pages, but without a link to the game's source code.
+> - The two hosted games were modified to track each one's highest obtained scores.
+>     - New high scores are automatically added to the database.
+>     - The high scores are displayed on each game's respective page.
 
-    >relevant user story(s): 
-    >As a user, I would like the ability to pause/resume the state of the engine to observe individual frames that are displayed.
     
 # Sprint 1
 ## Contributions
@@ -110,7 +123,19 @@ List of ready features here:
 
 - **Heath**:
 
-- **Jake**
+- **Jake**: "Created an initial interface for users to navigate the site."
+    - Jira Task (SCRUM-60): Create a grid to display available games on the home page
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-60
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/40
+    - Jira Task (SCRUM-62): Add titles, descriptions of games to their respective grid positions
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-62
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/41
+    - Jira Task (SCRUM-63): Add images for games to their respective grid positions
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-63 
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/45
+    - Jira Task (SCRUM-64): Add redirect to title, image on click
+        - URL: https://cs3398f23ferengi.atlassian.net/browse/SCRUM-64
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/46
 
 - **Jaime**: "As a User I would want a home page that is concise and showcases the menu for our game."
     - `Jira Task (SCRUM-72): Setting up the flask app repo from previous assignment`
@@ -126,7 +151,7 @@ List of ready features here:
 
 - **Heath**:
 
-- **Jake**
+- **Jake**: "Integrating a remote database with our flask app, and exploring ideas with open source games"
 
 - **Jaime**: "Import another game into our flask app and work in keeping track of scores in the backend or continue to update our front-end."
 
@@ -164,7 +189,22 @@ List of ready features here:
         - The conflicts were later fixed and the code was added into the dev3 branch
 - **Heath**:
 
-- **Jake**
+- **Jake**: "Created and integrated a remote database with our flask app, wrote a RESTful API to interact with the databsae, designed dynamic route for collection of open source games, designed route for individual open source games"
+    - Jira Task (SCRUM-97): Create and integrate a remote database with the flask app
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1?issueParent=10094&selectedIssue=SCRUM-97
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/48
+    - Jira Task (SCRUM-98): Create a development endpoint for inserting embedded games to the DB
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1?issueParent=10094&selectedIssue=SCRUM-98
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/64
+    - Jira Task (SCRUM-100): Modify homepage to include hosted/opensource/freegames
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1?issueParent=10094&selectedIssue=SCRUM-100
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/71
+    - Jira Task (SCRUM-106): Write code to access and play games stored in the OpenSourceGames collection
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1?issueParent=10094&selectedIssue=SCRUM-106
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/68
+    - Jira Task (SCRUM-108): Research connection conventions depending on driver selection
+        - URL: https://cs3398f23ferengi.atlassian.net/jira/software/projects/SCRUM/boards/1?issueParent=10094&selectedIssue=SCRUM-108
+        - Reference: https://bitbucket.org/cs3398f23ferengi/%7Bb5d91a26-2ba9-4319-8b24-98b14e7dc7c1%7D/pull-requests/51
 
 - **Jaime**: 
 
