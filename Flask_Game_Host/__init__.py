@@ -1,19 +1,19 @@
-'''
-    This module initializes the flask app and configures extensions
-
-'''
 import os
-from flask import Flask
-from flask_pymongo import PyMongo
+from flask import Flask, app
+from .mongo_config import mongo
 from dotenv import load_dotenv
 
-app = Flask(__name__)
+# Initialize flask app
+app = Flask(__name__, static_url_path='', static_folder='static', template_folder='templates')
 
-# Authenticate connection to db
-load_dotenv()
-app.config['MONGO_URI'] = os.getenv('MONGO_URI')
+# Configure flask extensions
+load_dotenv() 
+app.config["MONGO_URI"] = os.getenv("MONGO_URI") 
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY') 
 
-mongodb_client = PyMongo(app)
-db = mongodb_client.db
+# Integrate MongoDB with flask app
+mongo.init_app(app)
 
-from Flask_Game_Host import routes
+from .routes import routes_app
+app.register_blueprint(routes_app)
+ 

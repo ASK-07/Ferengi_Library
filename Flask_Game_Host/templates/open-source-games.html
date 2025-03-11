@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Better visualize div.game-grid by assigning background color */
+        .game-grid {
+            display: grid;
+            gap: 10px 10px;
+            grid-template-columns: auto auto auto;
+        }
+
+      .game-cell {
+        color: rgb(255, 255, 255);
+        padding: 20px;
+        text-align: center;
+        max-width: 200px;
+        word-wrap: break-word;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px; /* Adjust the margin as needed */
+}
+
+    </style>
+</head>
+    <div class="about-container">
+    <h2 style="margin-top: 50px;"> Open Source Games </h2>
+    <p class="about-lib">Get inspired by our collection of open-source games! Each game has a link to its repository at the bottom of its page, where you can see how the game was made. If you would like to request your game to be added, please send the github link to Requests.FerengiGameLibrary@gmail.com.</p>
+    </div>
+    <div class="game-grid">
+        {{ game_grid|safe }}
+    </div>
+
+</body>
+
+</html>
+  
+<!-- Paginate data -->
+<div class="pagination">
+  {% if page > 1 %}
+      <a href="{{ url_for('get_all_os_games', page=1) }}">First</a>
+      <span>...</span>
+  {% endif %}
+    
+  {% for p in page_range %}
+      <a href="{{ url_for('get_all_os_games', page=p) }}" {% if p == page %}class="active"{% endif %}>{{ p }}</a>
+      <span>...</span>
+  {% endfor %}
+    
+  {% if page < total_pages %}
+      <a href="{{ url_for('get_all_os_games', page=total_pages) }}">Last</a>
+  {% endif %}
+</div>
+
+{% endblock %}

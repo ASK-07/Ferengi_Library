@@ -45,7 +45,26 @@ LocalStorageManager.prototype.getBestScore = function () {
 };
 
 LocalStorageManager.prototype.setBestScore = function (score) {
+
   this.storage.setItem(this.bestScoreKey, score);
+
+  //Grabs current best scores from 2048 and sends to routes
+  var newScore = this.getBestScore();
+  console.log('New Score' , newScore);
+  fetch('/BestScores', { 
+    method: 'POST', 
+    headers: {
+       'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({ "newScore": { "score": newScore } })
+ })
+ .then(response => response.text())
+ .then(result => {
+    console.log(result);
+ })
+ .catch(error => {
+    console.error('Error: ', error);
+ });
 };
 
 // Game state getters/setters and clearing

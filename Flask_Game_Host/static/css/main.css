@@ -8,23 +8,25 @@ body {
 
 
 header {
-  background-color: #1f1c1c;
-  height: 35px;
+  background-image: linear-gradient(#1c1e22, #4c4747 40%, #1c1e22);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 0;
+  height: 58px;
   width: 100%;
   opacity: .9;
   margin-bottom: 10px;
 }
 
 header h1.logo {
-  margin: 5px;
+  vertical-align: middle;
   font-size: 1.5em;
-  color: #dda2ab;
+  color: #fff1f3;
   text-transform: uppercase;
   float: left;
 }
 
 header h1.logo:hover {
-  color: #dda2ab;
+  color: #fff1f3;
   text-decoration: none;
 }
 
@@ -33,9 +35,37 @@ header h1.logo:hover {
   margin: 0 auto;
 }
 
-#scoreboard_container {
+.about-container {
+  width: 1000px;
+  margin: 0 auto;
+  margin-left: -20px;
+  padding: 20px;
+  background-color: #1c1e22;
+  border-radius: 10px;
+}
+.photo-container {
+  width: 1250px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-left: -140px;
+  padding: 20px;
+  background-color: #1c1e22;
+  border-radius: 10px;
+}
+
+.homepage-container1
+{
+  width: 1000px;
+  margin: 0 auto;
+  margin-left: -20px;
+  padding: 20px;
+  background-color: #1c1e22;
+  border-radius: 10px;
+}
+
+#leaderboard_container {
   position: fixed;
-  top: 75px;
+  top: 420px;
   right: 20px;
   background: #191f19; 
   padding: 10px;
@@ -44,16 +74,18 @@ header h1.logo:hover {
 }
 /*title div class*/
 div.title {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #fff1f3;
+  width: 750px;
+  height: 50px;
   padding: 0px 0 0px 0;
-  background-color: #1f1c1c;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
 }
 
 table.leaderboard {
   width: 300px;
-  color: #dda2ab;
+  color: #fff1f3;
   font-size: 1.2em;
   float: right;
   text-align: left;
@@ -63,11 +95,24 @@ table.leaderboard {
   min-width: 50px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
+.about{
+  margin-top: -5px;
+  color: #fff1f3;
+  font-size: 1.2em;
 
+}
+.about-lib{
+  margin-top: 0 auto;
+  color: #fff1f3;
+  font-size: 1.2em;
+
+}
 th{
   border: 1px solid #484646fe;
   border-collapse: collapse;
   padding: 12px 15px;
+  color: #fff;  /* Text color for header cells */
+  font-size: 1.2em;  /* Font size for header cells */
 }
 tr:nth-child(even) {
   background-color: #312e2e;
@@ -76,52 +121,110 @@ td {
   border: 1px solid #484646fe;
   border-collapse: collapse;
   padding: 12px 15px;
+  color: #fff1f3;  /* Text color for regular cells */
+  font-size: 1.2em;  /* Font size for regular cells */
 }
 
 h2 {
   font-size: 3em;
-  color: #dda2ab;
+  color: #fff1f3;
   margin-top: 0px;
   text-align: center;
-  letter-spacing: -2px;
 }
-
 h3 {
-  font-size: 1.7em;
-  font-weight: 100;
-  margin-top: 30px;
-  text-align: center;
-  letter-spacing: -1px;
-  color: #999;
-}
-
-h4 {
-  font-size: 2em;
-  color: #dda2ab;
+  margin-top: 5px;
+  font-size: 1.3em;
+  color: #fff1f3;
   margin-top: 0px;
   text-align: center;
-  letter-spacing: -2px;
-
 }
 
 /*menu bar formatting*/
 .menu {
   float: right;
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .menu li {
+  vertical-align: middle;
   display: inline;
   text-align: left;
 }
 
 .menu li+li {
-  margin-left: 35px;
+  margin-left: 40px;
+  margin-right: 0px;
 }
 
 .menu li a {
-  color: #dda2ab;
+  color: #fff1f3;
   text-decoration: none;
+}
+.photo-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.photo-box {
+  text-align: center;
+  background-color: #181a1e;
+  position: relative;
+  margin-left: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+
+}
+
+.photo-box img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.photo-box-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.photo-box:hover .photo-box-inner {
+  transform: rotateY(180deg);
+}
+
+.photo-box-front,
+.photo-box-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.photo-box-front {
+  background: #181a1e;
+  z-index: 1;
+}
+
+.photo-box-back {
+  transform: rotateY(180deg);
+  background: #181a1e;
+  color: white;
+  z-index: 0;
 }
 
 #board {

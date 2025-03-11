@@ -6,7 +6,19 @@
     <style>
       
       /* Better visualize div.game-grid by assigning background color */
-      .game-grid {
+      .hosted-game-grid {
+        display:grid;
+        gap: 10px 10px;
+        grid-template-columns: auto auto;
+      }
+
+      .os-game-grid {
+        display: grid;
+        gap: 10px 10px;
+        grid-template-columns: auto auto auto auto; 
+      }
+
+      .free-game-grid {
         display: grid;
         gap: 10px 10px;
         grid-template-columns: auto auto auto auto; 
@@ -22,11 +34,28 @@
   </head>
   <body>
 
-    <div class="title">
-      <h2>Game Library</h2>
+    <!-- Hard code 1x2 grid of hosted games -->
+    <h2 style="margin-top: 50px;">Hosted Games</h2>
+    <div class="hosted-game-grid">
+      <div class="game-cell">
+        <a href="/pinball"><img src="img/pinball.png" alt="pinball.png"/></a><br>
+        <a href="/pinball"><u>Pinball</u></a><br>
+      </div>
+      <div class="game-cell">
+        <a href="/2048"><img src="img/2048.png" alt="2048.png"/></a><br>
+        <a href="/2048"><u>2048</u></a><br>
+      </div>
     </div>
 
-    <div class="game-grid">
+    <!-- Display 1x5 grid of random os games -->
+    <h2 style="margin-top: 50px;">Open Source Games</h2>
+    <div class="os-game-grid">
+      {{ os_grid|safe }}
+    </div>
+
+    <!-- Display 9x9 grid of free games -->
+    <h2 style="margin-top: 50px;">More Games</h2>
+    <div class="free-game-grid">
       {{ grid_display|safe }}
     </div>
 

@@ -11,57 +11,63 @@ Each key '<game>' is the same as its route string and stores:
 '''
 gameDict = {
 
-            'pinball': ['Pinball',
-                        'pinball.png',
-                        'Classic pinball',
-                        'https://github.com/corehtml5canvas/code/tree/master/ch09/pinball'
-                        ],
-
-            'test_game_0': ['test_title_0',
-                            'gex.png',
-                            'test_description_0',
-                            'test_URL_0'
+            'chess': ['Chess',
+                            'Chess.jpg',
+                            'Chess',
+                            'https://cdn.htmlgames.com/Chess/'
                             ],
 
-            'test_game_1': ['test_title_1',
-                            'smackdown.png',
-                            'test_description_1',
-                            'test_URL_1'
+            'daily-sudoku': ['Daily-Sudoku',
+                            'dailysudoku.jpg',
+                            'Daily Sudoku',
+                            'https://cdn.htmlgames.com/DailySudoku/'
                             ],
 
-            'test_game_2': ['test_title_2',
-                            'homescapes.png',
-                            'test_description_2',
-                            'test_URL_2'
+            '1010-classic': ['1010-Classic',
+                            '1010classic.jpg',
+                            '1010 Classic',
+                            'https://cdn.htmlgames.com/1010Classic/'
                             ],
 
-            'test_game_3': ['test_title_3',
-                            'bugsnax.png',
-                            'test_description_3',
-                            'test_URL_3'
+            'coloring-mandalas': ['Coloring-Mandalas',
+                            'coloring-mandalas.jpg',
+                            'Coloring Mandalas',
+                            'https://cdn.htmlgames.com/ColoringMandalas/'
                             ],
 
-            'test_game_4': ['test_title_4',
-                            'crying.png',
-                            'test_description_4',
-                            'test_URL_4'
+            'alien-invaders2': ['Alien-Invaders2',
+                            'alieninvaders2.jpg',
+                            'Alien Invaders 2',
+                            'https://cdn.htmlgames.com/AlienInvaders2/'
                             ],
 
-            'test_game_5': ['test_title_5',
-                            'evil.png',
-                            'test_description_5',
-                            'test_URL_5'
+            'bowling': ['Bowling',
+                            'bowling.jpg',
+                            'Bowling',
+                            'https://cdn.htmlgames.com/Bowling/'
                             ],
             
-            'test_game_6': ['test_title_6',
-                            'test_image_6.png',
-                            'test_description_6',
-                            'test_URL_6'
+            'classic-solitaire': ['Classic-Solitaire',
+                            'classicsolitaire.jpg',
+                            'Classic Solitaire',
+                            'https://cdn.htmlgames.com/ClassicSolitaire/'
                             ],
 
-            'test_game_7': ['test_title_7',
-                            'test_image_7.png',
-                            'test_description_7',
-                            'test_URL_7'
+            'checkers': ['Checkers',
+                            'CheckersClassic.jpg',
+                            'Checkers',
+                            'https://cdn.htmlgames.com/Checkers/'
+                            ],
+
+            'mahjongg': ['Mahjongg',
+                            'mahjongg.jpg',
+                            'Mahjongg',
+                            'https://cdn.htmlgames.com/Mahjongg/'
+                            ],
+
+            'ninja-darts': ['Ninja-Darts',
+                            'ninjadarts.jpg',
+                            'Ninja Darts',
+                            'https://cdn.htmlgames.com/NinjaDarts/'
                             ]
             }
