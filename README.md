@@ -1,7 +1,7 @@
 # Ferengi Game Library
 > Alex Kaylor, Jaime Flores, Jake Butler, Nathan Padgett, Heath Mercer, collaborated
 > to create a flask application where users can play a variety of games in their browser.
-
+viewable here: https://ferengi.vercel.app/
 
 ## Table of Contents
 * [General Info](#general-information)
