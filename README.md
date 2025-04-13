@@ -2,8 +2,6 @@
 > Alex Kaylor, Jaime Flores, Jake Butler, Nathan Padgett, Heath Mercer, collaborated
 > to create a flask application where users can play a variety of games in their browser.
 
-> We deployed our flask app, and it can be accessed [here](www.ferengigamelibrary.com).
-> We only own the domain for a limited time, so if it can't be accessed, it likely needs to be renewed.
 
 ## Table of Contents
 * [General Info](#general-information)
